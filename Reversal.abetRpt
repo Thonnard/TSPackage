@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<report-format>
+  <columns>
+    <key title="Animal ID" alias="Animal ID" />
+    <key title="Schedule run date" alias="date" />
+    <column title="End Summary - Condition" alias="End Summary - Condition" aggregate="Sum" />
+    <column title="End Summary - Trials Completed" alias="End Summary - Trials Completed" aggregate="Sum" />
+    <column title="End Summary - No Correction Trials" alias="End Summary - No Correction Trials" aggregate="Sum" />
+    <column title="End Summary - % Correct" alias="End Summary - % Correct" aggregate="Sum" />
+    <column title="End Summary - Left ITI Touches" alias="End Summary - Left ITI Touches" aggregate="Sum" />
+    <column title="End Summary - Right ITI Touches" alias="End Summary - Right ITI Touches" aggregate="Sum" />
+    <column title="Correct touch latency" alias="Correct touch latency" aggregate="Mean" />
+    <column title="Incorrect Touch Latency" alias="Incorrect Touch Latency" aggregate="Mean" />
+    <column title="Correct Left touch latency" alias="Correct Left touch latency" aggregate="Mean" />
+    <column title="Correct Right touch latency" alias="Correct Right touch latency" aggregate="Mean" />
+    <column title="Correct Reward Collection" alias="Correct Reward Collection" aggregate="Mean" />
+  </columns>
+  <analysis-set>PD Analysis</analysis-set>
+  <results>
+    <row>
+      <cell>01RD</cell>
+      <cell>29/04/2018 13:06:41</cell>
+      <cell>976,473</cell>
+      <cell>30,000</cell>
+      <cell>5,000</cell>
+      <cell>83,333</cell>
+      <cell>17,000</cell>
+      <cell>12,000</cell>
+      <cell>2,499</cell>
+      <cell>2,736</cell>
+      <cell>2,670</cell>
+      <cell>2,329</cell>
+      <cell>1,053</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>27/04/2018 9:52:12</cell>
+      <cell>1.100,149</cell>
+      <cell>30,000</cell>
+      <cell>5,000</cell>
+      <cell>90,000</cell>
+      <cell>21,000</cell>
+      <cell>16,000</cell>
+      <cell>3,981</cell>
+      <cell>10,580</cell>
+      <cell>4,546</cell>
+      <cell>3,417</cell>
+      <cell>1,376</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>26/04/2018 9:50:34</cell>
+      <cell>911,368</cell>
+      <cell>30,000</cell>
+      <cell>1,000</cell>
+      <cell>96,667</cell>
+      <cell>18,000</cell>
+      <cell>5,000</cell>
+      <cell>3,696</cell>
+      <cell>5,043</cell>
+      <cell>4,306</cell>
+      <cell>3,087</cell>
+      <cell>1,547</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>25/04/2018 10:02:23</cell>
+      <cell>957,676</cell>
+      <cell>30,000</cell>
+      <cell>2,000</cell>
+      <cell>93,333</cell>
+      <cell>26,000</cell>
+      <cell>12,000</cell>
+      <cell>4,298</cell>
+      <cell>2,714</cell>
+      <cell>4,252</cell>
+      <cell>4,344</cell>
+      <cell>1,404</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>24/04/2018 9:55:41</cell>
+      <cell>914,860</cell>
+      <cell>30,000</cell>
+      <cell>2,000</cell>
+      <cell>93,333</cell>
+      <cell>12,000</cell>
+      <cell>16,000</cell>
+      <cell>3,463</cell>
+      <cell>5,622</cell>
+      <cell>3,479</cell>
+      <cell>3,447</cell>
+      <cell>1,426</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>23/04/2018 10:18:17</cell>
+      <cell>863,047</cell>
+      <cell>30,000</cell>
+      <cell>0,000</cell>
+      <cell>100,000</cell>
+      <cell>22,000</cell>
+      <cell>20,000</cell>
+      <cell>2,780</cell>
+      <cell>0</cell>
+      <cell>2,652</cell>
+      <cell>2,909</cell>
+      <cell>1,134</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>22/04/2018 17:05:31</cell>
+      <cell>944,464</cell>
+      <cell>30,000</cell>
+      <cell>4,000</cell>
+      <cell>86,667</cell>
+      <cell>30,000</cell>
+      <cell>26,000</cell>
+      <cell>3,154</cell>
+      <cell>2,107</cell>
+      <cell>3,252</cell>
+      <cell>3,055</cell>
+      <cell>1,056</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>21/04/2018 10:41:30</cell>
+      <cell>822,914</cell>
+      <cell>30,000</cell>
+      <cell>0,000</cell>
+      <cell>100,000</cell>
+      <cell>12,000</cell>
+      <cell>3,000</cell>
+      <cell>3,157</cell>
+      <cell>0</cell>
+      <cell>3,541</cell>
+      <cell>2,773</cell>
+      <cell>1,136</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>20/04/2018 9:52:11</cell>
+      <cell>912,862</cell>
+      <cell>30,000</cell>
+      <cell>2,000</cell>
+      <cell>93,333</cell>
+      <cell>15,000</cell>
+      <cell>3,000</cell>
+      <cell>2,532</cell>
+      <cell>5,843</cell>
+      <cell>2,807</cell>
+      <cell>2,257</cell>
+      <cell>1,072</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>19/04/2018 9:51:31</cell>
+      <cell>1.000,140</cell>
+      <cell>30,000</cell>
+      <cell>0,000</cell>
+      <cell>100,000</cell>
+      <cell>6,000</cell>
+      <cell>10,000</cell>
+      <cell>3,524</cell>
+      <cell>0</cell>
+      <cell>3,136</cell>
+      <cell>3,911</cell>
+      <cell>1,337</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>18/04/2018 9:49:33</cell>
+      <cell>1.393,580</cell>
+      <cell>30,000</cell>
+      <cell>3,000</cell>
+      <cell>90,000</cell>
+      <cell>27,000</cell>
+      <cell>33,000</cell>
+      <cell>7,293</cell>
+      <cell>3,806</cell>
+      <cell>4,131</cell>
+      <cell>10,455</cell>
+      <cell>1,393</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>17/04/2018 9:56:28</cell>
+      <cell>1.201,561</cell>
+      <cell>30,000</cell>
+      <cell>5,000</cell>
+      <cell>86,667</cell>
+      <cell>18,000</cell>
+      <cell>21,000</cell>
+      <cell>2,834</cell>
+      <cell>3,923</cell>
+      <cell>3,003</cell>
+      <cell>2,665</cell>
+      <cell>1,173</cell>
+    </row>
+    <row>
+      <cell>02RD</cell>
+      <cell>16/04/2018 9:47:30</cell>
+      <cell>1.324,794</cell>
+      <cell>30,000</cell>
+      <cell>8,000</cell>
+      <cell>80,000</cell>
+      <cell>12,000</cell>
+      <cell>26,000</cell>
+      <cell>3,114</cell>
+      <cell>10,052</cell>
+      <cell>2,915</cell>
+      <cell>3,314</cell>
+      <cell>1,447</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>16/04/2018 10:34:14</cell>
+      <cell>3.600,000</cell>
+      <cell>10,000</cell>
+      <cell>46,000</cell>
+      <cell>30,000</cell>
+      <cell>108,000</cell>
+      <cell>48,000</cell>
+      <cell>14,080</cell>
+      <cell>4,742</cell>
+      <cell>19,925</cell>
+      <cell>6,774</cell>
+      <cell>1,355</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>15/04/2018 11:12:04</cell>
+      <cell>1.774,129</cell>
+      <cell>30,000</cell>
+      <cell>14,000</cell>
+      <cell>80,000</cell>
+      <cell>36,000</cell>
+      <cell>35,000</cell>
+      <cell>4,529</cell>
+      <cell>4,038</cell>
+      <cell>5,066</cell>
+      <cell>3,991</cell>
+      <cell>1,684</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>14/04/2018 16:03:20</cell>
+      <cell>2.077,645</cell>
+      <cell>30,000</cell>
+      <cell>34,000</cell>
+      <cell>43,333</cell>
+      <cell>70,000</cell>
+      <cell>81,000</cell>
+      <cell>3,009</cell>
+      <cell>2,402</cell>
+      <cell>2,991</cell>
+      <cell>3,025</cell>
+      <cell>1,129</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>13/04/2018 10:09:24</cell>
+      <cell>3.600,000</cell>
+      <cell>28,000</cell>
+      <cell>32,000</cell>
+      <cell>60,714</cell>
+      <cell>87,000</cell>
+      <cell>68,000</cell>
+      <cell>4,543</cell>
+      <cell>3,840</cell>
+      <cell>3,536</cell>
+      <cell>5,628</cell>
+      <cell>1,356</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>12/04/2018 10:26:07</cell>
+      <cell>3.600,000</cell>
+      <cell>22,000</cell>
+      <cell>53,000</cell>
+      <cell>45,455</cell>
+      <cell>108,000</cell>
+      <cell>99,000</cell>
+      <cell>10,735</cell>
+      <cell>5,161</cell>
+      <cell>16,835</cell>
+      <cell>3,414</cell>
+      <cell>2,187</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>11/04/2018 12:10:17</cell>
+      <cell>3.600,000</cell>
+      <cell>15,000</cell>
+      <cell>46,000</cell>
+      <cell>26,667</cell>
+      <cell>95,000</cell>
+      <cell>144,000</cell>
+      <cell>13,414</cell>
+      <cell>17,277</cell>
+      <cell>21,507</cell>
+      <cell>5,322</cell>
+      <cell>7,142</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>10/04/2018 9:59:48</cell>
+      <cell>3.600,000</cell>
+      <cell>10,000</cell>
+      <cell>50,000</cell>
+      <cell>10,000</cell>
+      <cell>85,000</cell>
+      <cell>175,000</cell>
+      <cell>18,919</cell>
+      <cell>18,877</cell>
+      <cell>19,749</cell>
+      <cell>18,256</cell>
+      <cell>1,879</cell>
+    </row>
+    <row>
+      <cell>01RD</cell>
+      <cell>9/04/2018 11:40:44</cell>
+      <cell>3.600,000</cell>
+      <cell>13,000</cell>
+      <cell>43,000</cell>
+      <cell>38,462</cell>
+      <cell>74,000</cell>
+      <cell>120,000</cell>
+      <cell>7,034</cell>
+      <cell>8,685</cell>
+      <cell>7,193</cell>
+      <cell>6,898</cell>
+      <cell>2,345</cell>
+    </row>
+  </results>
+</report-format>
