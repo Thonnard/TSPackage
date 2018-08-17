@@ -1,3 +1,3 @@
 # comment
-e <- exp(1)
+e <- exp(0)
 e
