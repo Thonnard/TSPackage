@@ -8,3 +8,5 @@ d <- C[C[,2] >=80,]
 e <- d[2,]
 
 e$a
+
+# nog niet de oplossing (bvb 80, 75, 82 gaat verkeerde resultaten geven)
