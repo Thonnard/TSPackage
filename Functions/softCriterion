@@ -1,15 +1,14 @@
-a <- c(1:10)
-b <- c(20, 24, 20, 20, 65, 40, 75, 80, 82, 96)
+# set number of successive trials to reach criterion
+softcriterion <- 2
 
-C <- data.frame(cbind(a,b))
+# set score to reach criterion
+score <- 80
 
-d <- C[C[,2] >=80,]
-
-e <- d[2,]
-
-e$a
-
-# cf https://stackoverflow.com/questions/19998836/r-count-consecutive-occurrences-of-values-in-a-single-column
-# so: 1) extra kolom maken die met 'a' bij waardes >=80 en 'b' bij <80. 2) count mechanisme van stackoverflow 
-# 3) rij van eerste count 2 weergeven
-
+# determine number of trials needed to reach criterion
+trial <- c(1:10)
+perccorr <- c(20, 24, 20, 20, 80, 75, 75, 82, 96, 63)
+c <- as.data.frame(cbind(trial,perccorr))
+c$success <- ifelse(c$perccorr >= score, "TRUE", "FALSE")
+c$seq <- sequence(rle(as.character(c$success))$lengths)
+c[c[, "success"] == "TRUE" & c[, "seq"] == softcriterion,]
+result <- c[c[, "success"] == "TRUE" & c[, "seq"] == softcriterion,]$trial
