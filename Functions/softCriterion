@@ -10,3 +10,5 @@ e <- d[2,]
 e$a
 
 # nog niet de oplossing (bvb 80, 75, 82 gaat verkeerde resultaten geven)
+# cf https://stackoverflow.com/questions/19998836/r-count-consecutive-occurrences-of-values-in-a-single-column
+
