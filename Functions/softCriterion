@@ -4,7 +4,7 @@
 # When criterion was never reached, criterion value will be "NA" 
 #
 # Parameters
-# data: xslx format, requiring "% Correct", "Session", "Animal ID", "Lesion"
+# data: xlsx format, requiring "% Correct", "Session", "Animal ID", "Lesion"
 # crit: number of successive sessions to reach criterion, default = 2
 # score: % correct needed to reach criterion, default = 80
 #
@@ -12,7 +12,7 @@
 # softCriterion("Acquisition - Liam.xlsx")
 #
 # TODO
-# change data reading mode to csv instead of xslx
+# change data reading mode to csv instead of xlsx
 
 softCriterion <- function(data, crit = 2, score = 80) {
   # read data
