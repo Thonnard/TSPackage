@@ -15,7 +15,6 @@
 # change data reading mode to csv instead of xslx
 
 softCriterion <- function(data, crit = 2, score = 80) {
-  
   # read data
   data <- read_excel(data)
   
@@ -43,8 +42,7 @@ softCriterion <- function(data, crit = 2, score = 80) {
     id[i] <- i
     
     # Group
-    group[i] <- dataID$Lesion[1]
-    
+    group[i] <- dataID$Lesion[1]    
   }
   
   # create output table
