@@ -7,6 +7,7 @@
 # data: xslx format, requiring "% Correct", "Session", "Animal ID", "Lesion"
 # crit: number of successive sessions to reach criterion, default = 2
 # score: % correct needed to reach criterion, default = 80
+#
 # Example
 # softCriterion("Acquisition - Liam.xlsx")
 #
