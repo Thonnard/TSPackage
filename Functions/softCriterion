@@ -1,14 +1,58 @@
-# set number of successive trials to reach criterion
-softcriterion <- 2
+# Description
+# When using a fixed number of test sessions, this function returns at which session the subject reached the soft criterion
+# Output in csv format, including animal id, group information and criterion (i.e. session)
+# When criterion was never reached, criterion value will be "NA" 
+#
+# Parameters
+# data: xslx format, requiring "% Correct", "Session", "Animal ID", "Lesion"
+# crit: number of successive sessions to reach criterion, default = 2
+# score: % correct needed to reach criterion, default = 80
+# Example
+# softCriterion("Acquisition - Liam.xlsx")
+#
+# TODO
+# change data reading mode to csv instead of xslx
 
-# set score to reach criterion
-score <- 80
-
-# determine number of trials needed to reach criterion
-trial <- c(1:10)
-perccorr <- c(20, 24, 20, 20, 80, 75, 75, 82, 96, 63)
-c <- as.data.frame(cbind(trial,perccorr))
-c$success <- ifelse(c$perccorr >= score, "TRUE", "FALSE")
-c$seq <- sequence(rle(as.character(c$success))$lengths)
-c[c[, "success"] == "TRUE" & c[, "seq"] == softcriterion,]
-result <- c[c[, "success"] == "TRUE" & c[, "seq"] == softcriterion,]$trial
+softCriterion <- function(data, crit = 2, score = 80) {
+  
+  # read data
+  data <- read_excel(data)
+  
+  # calculate success
+  data$success <- ifelse(data$"% Correct" >= score, "TRUE", "FALSE")
+  
+  # variables for output
+  list <- unique(data$'Animal ID')
+  id <- vector(length = 0)
+  group <- vector(length = 0)
+  criterion <- vector(length = 0)
+  
+  # for loop for every subject
+  for(i in list) {
+    # select data for every animal
+    dataID <- data[data[, "Animal ID"] == i,]
+    
+    # determine sequence | this needs to be in this for loop to avoid mistakes!
+    dataID$seq <- sequence(rle(as.character(dataID$success))$lengths)
+    
+    # isolate critical session number
+    criterion[i] <- dataID[dataID[, "success"] == "TRUE" & dataID[, "seq"] == crit,]$Session[1]
+    
+    # ID
+    id[i] <- i
+    
+    # Group
+    group[i] <- dataID$Lesion[1]
+    
+  }
+  
+  # create output table
+  output <- data.frame(id, group, criterion)
+  rownames(output) <- c()
+  
+  # write table to cvs file
+  write.csv(output, file = "softCriterionOutput.csv")
+  
+  # return table in console
+  return(output)
+}
