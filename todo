@@ -1,1 +1,44 @@
-Add perseveration data (correction trials / incorrect trials) -> pierre paper?
+R PROJECT – TOUCHSCREEN DATA
+
+Workflow
+
+1.	Load data into R.
+-	R_Analysis_PD.abetRpt is file used to extract files from ABET II Software for operant touchscreen chambers. 
+  Stored on shared network drive (J:).
+-	Set working directory to: (?)
+-	Read data file as: Reversal_Data.csv
+-	Load required libraries (less is more): ...
+
+2.	R Base.
+- Add/Transform data:
+  Total Trials, Log (RTs?), Perseveration Index (Bussey, et al., 2007), ...
+  Split data into perseverative sessions (< 50 %), and non-perseverative sessions (50 % < x <= soft criterion)?
+  
+-	Functions compatible for every variable:
+  Descriptives function. 
+    Parameters: DV, Group, Data.
+    Make table and visualize with boxplots.
+      To do: Add Q1, Q3, and IQR in table.
+
+-	RMAnova function.
+  Parameters: DV, Group, Time, Data.
+  Perform Mixed-Effects model.
+  Extract formal test statistics for assumptions: table and plots.
+  Extract formal test statistics for RMAnova analysis: table and plots.
+  Plot individual learning curves (line plots).
+  Plot aggregate learning curves.
+
+- Non-Linear function (Based on Piiponniemi, et al., 2017).
+  Parameters: DV, Group, Data.
+  Plot individual learning curves.
+  Plot aggregate learning curves.
+
+- Anova function (parametric). 
+  Insert formal tests to test assumptions, add plots.
+  Insert anova function. Which package?! Car, Base R, Afex, …
+  Insert line plot.
+
+- Non-parametric 'equivalent' to ANOVA?
+
+3.  Statistical Report.
+- R Markdown
