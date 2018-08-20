@@ -49,7 +49,7 @@ softCriterion <- function(data, crit = 2, score = 80) {
   output <- data.frame(id, group, criterion)
   rownames(output) <- c()
   
-  # write table to cvs file
+  # write table to csv file
   write.csv(output, file = "softCriterionOutput.csv")
   
   # return table in console
