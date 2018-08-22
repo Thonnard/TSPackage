@@ -24,5 +24,5 @@ formatData <- function(data){
   # remove NAs or give warning
   
   # save data
-  write.csv(data, "data.cvs", row.names=FALSE)
+  write.csv(data, "data.csv", row.names=FALSE)
 }
