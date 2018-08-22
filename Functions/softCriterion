@@ -33,6 +33,9 @@ softCriterion <- function(data, crit = 2, score = 80) {
     # select data for every animal
     dataID <- data[data[, "Animal ID"] == i,]
     
+    # order data correctly
+    dataID <- dataID[with(dataID, order(Session)), ]
+    
     # determine sequence | this needs to be in this for loop to avoid mistakes!
     dataID$seq <- sequence(rle(as.character(dataID$success))$lengths)
     
