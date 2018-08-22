@@ -16,6 +16,7 @@ Workflow
   Total Trials, Log (RTs?), Perseveration Index (Bussey, et al., 2007), ...
   Split data into perseverative sessions (< 50 %), and non-perseverative sessions (50 % < x <= soft criterion)?
   Check input for mistakes (comma vs .) cf. duration; if necessary: if function with /1000
+  Order data: mouse -> session (important for softCriterion.R)
   
 -	Functions compatible for every variable:
   Descriptives function. 
