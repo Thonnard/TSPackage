@@ -12,7 +12,7 @@ formatData <- function(data, group = "all"){
   for (i in 1:ncol(data)) {names(data)[i] <- coln[i]}
   
   # set variable type
-  data$Group <- as.character(data$Group)
+  data$Group <- factor(data$Group)
   #...
   
   # order data
