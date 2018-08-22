@@ -9,4 +9,6 @@ formatData <- function(data){
   
   # add extra columns (perseveration etc)
   
+  # save data
+  write.csv(data, "data.cvs", row.names=FALSE)
 }
