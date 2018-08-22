@@ -5,7 +5,7 @@ formatData <- function(data){
   # change column names
   
   # correct duration (comma vs dots)
-  # x <- x/1000
+  # if(x > 3700){x <- x/1000}
   
   # add extra columns (perseveration etc, SESSION!!)
   
