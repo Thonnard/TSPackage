@@ -3,7 +3,7 @@ formatData <- function(data){
   data <- read.csv(data, header = TRUE, sep = ",")
   
   # change column names
-  names(data)[names(data)=="CorrectionTrials..1."] <- ""
+  names(data)[names(data)=="CorrectionTrials..1."] <- "CorrectionTrials"
   names(data)[names(data)=="Schedule.run.date"] <- ""
   names(data)[names(data)=="Duration..1."] <- ""
   names(data)[names(data)=="Trials..1."] <- ""
