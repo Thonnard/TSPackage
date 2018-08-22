@@ -1,4 +1,4 @@
-formatData <- function(data){
+formatData <- function(data, group = "all"){
   # read data
   data <- read.csv(data, header = TRUE, sep = ",")
   
@@ -20,6 +20,8 @@ formatData <- function(data){
   # add extra columns (perseveration etc, SESSION!!)
   data$Session <- sequence(rle(as.character(data$Animal))$lengths)
   # data$Perseversation <-
+  
+  # select groups
   
   # remove NAs or give warning
   
