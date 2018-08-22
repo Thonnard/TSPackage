@@ -1,0 +1,3353 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<report-format>
+  <columns>
+    <key title="Schedule name" alias="Schedule" />
+    <key title="Environment name" alias="Box" />
+    <key title="Schedule run date" alias="Schedule run date" />
+    <key title="Animal ID" alias="Animal" />
+    <key title="Group ID" alias="Group" />
+    <key title="User" alias="User" />
+    <column title="End Summary - Condition" alias="Duration" aggregate="Detail" />
+    <column title="End Summary - Trials Completed" alias="Trials" aggregate="Detail" />
+    <column title="End Summary - No Correction Trials" alias="CorrectionTrials" aggregate="Detail" />
+    <column title="End Summary - % Correct" alias="PercCorrect" aggregate="Detail" />
+    <column title="End Summary - Left ITI Touches" alias="LeftITITouches" aggregate="Detail" />
+    <column title="End Summary - Right ITI Touches" alias="RightITITouches" aggregate="Detail" />
+    <column title="Correct touch latency" alias="Latency_CorrectTouch" aggregate="Mean" />
+    <column title="Incorrect Touch Latency" alias="Latency_IncorrectTouch" aggregate="Mean" />
+    <column title="Correct Left touch latency" alias="Latency_CorrectLeftTouch" aggregate="Mean" />
+    <column title="Correct Right touch latency" alias="Latency_CorrectRightTouch" aggregate="Mean" />
+    <column title="Correct Reward Collection" alias="Latency_CorrectRewardCollection" aggregate="Mean" />
+    <column title="10 Trial Block - Trials" alias="Duration_10block" aggregate="Detail" />
+    <column title="10 Trial Block - Correct Trial" alias="CorrectTrials_10block" aggregate="Detail" />
+    <column title="10 Trial Block - Correct Percent" alias="PercCorrect_10block" aggregate="Detail" />
+    <column title="10 Trial Block - Correction Trials" alias="CorrectionTrials_10block" aggregate="Detail" />
+  </columns>
+  <analysis-set>PD Analysis</analysis-set>
+  <results>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>16/11/2016 15:46:44</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1257.378</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>83.333</cell>
+      <cell>18</cell>
+      <cell>7</cell>
+      <cell>4.171</cell>
+      <cell>3.527</cell>
+      <cell>4.689</cell>
+      <cell>3.616</cell>
+      <cell>1.247</cell>
+      <cell>399.714</cell>
+      <cell>784.372</cell>
+      <cell>1257.378</cell>
+      <cell>8</cell>
+      <cell>10</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>90</cell>
+      <cell>83.333</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>15/11/2016 14:38:26</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1712.099</cell>
+      <cell>30</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>4</cell>
+      <cell>4</cell>
+      <cell>4.622</cell>
+      <cell>5.344</cell>
+      <cell>4.834</cell>
+      <cell>4.410</cell>
+      <cell>1.350</cell>
+      <cell>508.494</cell>
+      <cell>961.911</cell>
+      <cell>1712.098</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>75</cell>
+      <cell>80</cell>
+      <cell>3</cell>
+      <cell>2</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>14/11/2016 14:34:42</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1650.018</cell>
+      <cell>30</cell>
+      <cell>6</cell>
+      <cell>76.667</cell>
+      <cell>1</cell>
+      <cell>13</cell>
+      <cell>4.702</cell>
+      <cell>5.458</cell>
+      <cell>4.856</cell>
+      <cell>4.538</cell>
+      <cell>2.206</cell>
+      <cell>720.659</cell>
+      <cell>1161.778</cell>
+      <cell>1650.018</cell>
+      <cell>6</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>60</cell>
+      <cell>75</cell>
+      <cell>76.666</cell>
+      <cell>4</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>10/11/2016 17:21:18</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>25</cell>
+      <cell>24</cell>
+      <cell>44</cell>
+      <cell>46</cell>
+      <cell>36</cell>
+      <cell>5.885</cell>
+      <cell>4.342</cell>
+      <cell>3.882</cell>
+      <cell>8.056</cell>
+      <cell>1.753</cell>
+      <cell>1133.949</cell>
+      <cell>2565.654</cell>
+      <cell />
+      <cell>5</cell>
+      <cell>5</cell>
+      <cell />
+      <cell>50</cell>
+      <cell>50</cell>
+      <cell />
+      <cell>10</cell>
+      <cell>6</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>10/11/2016 16:15:03</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1469.493</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>90</cell>
+      <cell>27</cell>
+      <cell>22</cell>
+      <cell>6.270</cell>
+      <cell>7.133</cell>
+      <cell>5.524</cell>
+      <cell>7.015</cell>
+      <cell>1.688</cell>
+      <cell>443.101</cell>
+      <cell>1116.426</cell>
+      <cell>1469.493</cell>
+      <cell>10</cell>
+      <cell>7</cell>
+      <cell>10</cell>
+      <cell>100</cell>
+      <cell>85</cell>
+      <cell>90</cell>
+      <cell>0</cell>
+      <cell>5</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>10/11/2016 15:05:41</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1338.238</cell>
+      <cell>30</cell>
+      <cell>10</cell>
+      <cell>73.333</cell>
+      <cell>30</cell>
+      <cell>26</cell>
+      <cell>2.540</cell>
+      <cell>3.000</cell>
+      <cell>2.493</cell>
+      <cell>2.588</cell>
+      <cell>3.497</cell>
+      <cell>543.627</cell>
+      <cell>958.298</cell>
+      <cell>1338.237</cell>
+      <cell>5</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>50</cell>
+      <cell>65</cell>
+      <cell>73.333</cell>
+      <cell>5</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>09/11/2016 16:13:41</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>
+      </cell>
+      <cell>3600</cell>
+      <cell>22</cell>
+      <cell>13</cell>
+      <cell>63.636</cell>
+      <cell>21</cell>
+      <cell>20</cell>
+      <cell>5.778</cell>
+      <cell>4.405</cell>
+      <cell>4.783</cell>
+      <cell>6.607</cell>
+      <cell>1.384</cell>
+      <cell>2120.685</cell>
+      <cell>3213.427</cell>
+      <cell />
+      <cell>5</cell>
+      <cell>7</cell>
+      <cell />
+      <cell>50</cell>
+      <cell>60</cell>
+      <cell />
+      <cell>8</cell>
+      <cell>5</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>09/11/2016 15:03:33</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1382.199</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>86.667</cell>
+      <cell>17</cell>
+      <cell>12</cell>
+      <cell>5.697</cell>
+      <cell>3.889</cell>
+      <cell>5.211</cell>
+      <cell>6.182</cell>
+      <cell>1.658</cell>
+      <cell>526.419</cell>
+      <cell>958.982</cell>
+      <cell>1382.199</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>90</cell>
+      <cell>85</cell>
+      <cell>86.666</cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>09/11/2016 13:50:32</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1908.146</cell>
+      <cell>30</cell>
+      <cell>13</cell>
+      <cell>70</cell>
+      <cell>28</cell>
+      <cell>26</cell>
+      <cell>3.934</cell>
+      <cell>4.653</cell>
+      <cell>4.647</cell>
+      <cell>3.170</cell>
+      <cell>2.233</cell>
+      <cell>981.588</cell>
+      <cell>1395.858</cell>
+      <cell>1908.146</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>70</cell>
+      <cell>70</cell>
+      <cell>70</cell>
+      <cell>8</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>08/11/2016 16:16:58</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>24</cell>
+      <cell>11</cell>
+      <cell>83.333</cell>
+      <cell>14</cell>
+      <cell>29</cell>
+      <cell>7.830</cell>
+      <cell>10.274</cell>
+      <cell>7.631</cell>
+      <cell>8.028</cell>
+      <cell>1.698</cell>
+      <cell>1910.197</cell>
+      <cell>3289.35</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell />
+      <cell>70</cell>
+      <cell>80</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>4</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>08/11/2016 15:03:49</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1634.919</cell>
+      <cell>30</cell>
+      <cell>11</cell>
+      <cell>73.333</cell>
+      <cell>14</cell>
+      <cell>42</cell>
+      <cell>9.407</cell>
+      <cell>13.133</cell>
+      <cell>9.095</cell>
+      <cell>9.719</cell>
+      <cell>4.278</cell>
+      <cell>724.2</cell>
+      <cell>1212.806</cell>
+      <cell>1634.919</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>60</cell>
+      <cell>70</cell>
+      <cell>73.333</cell>
+      <cell>6</cell>
+      <cell>3</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>08/11/2016 13:48:31</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1981.273</cell>
+      <cell>30</cell>
+      <cell>14</cell>
+      <cell>76.667</cell>
+      <cell>38</cell>
+      <cell>41</cell>
+      <cell>3.183</cell>
+      <cell>2.722</cell>
+      <cell>3.387</cell>
+      <cell>2.979</cell>
+      <cell>1.476</cell>
+      <cell>811.382</cell>
+      <cell>1519.508</cell>
+      <cell>1981.273</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>80</cell>
+      <cell>76.666</cell>
+      <cell>3</cell>
+      <cell>7</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>07/11/2016 17:24:58</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>4</cell>
+      <cell>11</cell>
+      <cell>50</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>7.473</cell>
+      <cell>7.739</cell>
+      <cell>8.462</cell>
+      <cell>6.484</cell>
+      <cell>1.476</cell>
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>07/11/2016 16:14:54</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1770.713</cell>
+      <cell>30</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>15</cell>
+      <cell>15</cell>
+      <cell>5.606</cell>
+      <cell>6.732</cell>
+      <cell>5.282</cell>
+      <cell>5.930</cell>
+      <cell>2.908</cell>
+      <cell>726.172</cell>
+      <cell>1177.079</cell>
+      <cell>1770.713</cell>
+      <cell>7</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>70</cell>
+      <cell>75</cell>
+      <cell>80</cell>
+      <cell>4</cell>
+      <cell>2</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>07/11/2016 15:05:02</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>2430.515</cell>
+      <cell>30</cell>
+      <cell>14</cell>
+      <cell>73.333</cell>
+      <cell>23</cell>
+      <cell>24</cell>
+      <cell>2.709</cell>
+      <cell>3.242</cell>
+      <cell>3.130</cell>
+      <cell>2.289</cell>
+      <cell>1.537</cell>
+      <cell>786.423</cell>
+      <cell>1948.97</cell>
+      <cell>2430.515</cell>
+      <cell>8</cell>
+      <cell>5</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>65</cell>
+      <cell>73.333</cell>
+      <cell>3</cell>
+      <cell>9</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>04/11/2016 17:09:25</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1405.204</cell>
+      <cell>30</cell>
+      <cell>4</cell>
+      <cell>90</cell>
+      <cell>19</cell>
+      <cell>21</cell>
+      <cell>3.526</cell>
+      <cell>4.623</cell>
+      <cell>3.565</cell>
+      <cell>3.488</cell>
+      <cell>1.576</cell>
+      <cell>506.724</cell>
+      <cell>1050.167</cell>
+      <cell>1405.203</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>10</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>90</cell>
+      <cell>2</cell>
+      <cell>2</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>04/11/2016 17:09:22</cell>
+      <cell>gr4</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>892.705</cell>
+      <cell>30</cell>
+      <cell>0</cell>
+      <cell>100</cell>
+      <cell>30</cell>
+      <cell>14</cell>
+      <cell>2.119</cell>
+      <cell>0</cell>
+      <cell>2.242</cell>
+      <cell>1.996</cell>
+      <cell>1.346</cell>
+      <cell>323.827</cell>
+      <cell>598.669</cell>
+      <cell>892.705</cell>
+      <cell>10</cell>
+      <cell>10</cell>
+      <cell>10</cell>
+      <cell>100</cell>
+      <cell>100</cell>
+      <cell>100</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>04/11/2016 17:09:18</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>10</cell>
+      <cell>12</cell>
+      <cell>40</cell>
+      <cell>24</cell>
+      <cell>49</cell>
+      <cell>3.700</cell>
+      <cell>7.261</cell>
+      <cell>2.808</cell>
+      <cell>4.816</cell>
+      <cell>1.415</cell>
+      <cell>3464.846</cell>
+      <cell />
+      <cell />
+      <cell>4</cell>
+      <cell />
+      <cell />
+      <cell>40</cell>
+      <cell />
+      <cell />
+      <cell>11</cell>
+      <cell />
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>04/11/2016 16:00:18</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1696.432</cell>
+      <cell>30</cell>
+      <cell>8</cell>
+      <cell>73.333</cell>
+      <cell>27</cell>
+      <cell>37</cell>
+      <cell>4.440</cell>
+      <cell>4.417</cell>
+      <cell>4.033</cell>
+      <cell>4.847</cell>
+      <cell>1.515</cell>
+      <cell>725.378</cell>
+      <cell>1134.053</cell>
+      <cell>1696.432</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>5</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>73.333</cell>
+      <cell>2</cell>
+      <cell>1</cell>
+      <cell>5</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>04/11/2016 14:54:00</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>3028.208</cell>
+      <cell>30</cell>
+      <cell>20</cell>
+      <cell>53.333</cell>
+      <cell>11</cell>
+      <cell>37</cell>
+      <cell>2.792</cell>
+      <cell>2.680</cell>
+      <cell>2.451</cell>
+      <cell>3.133</cell>
+      <cell>1.457</cell>
+      <cell>1446.446</cell>
+      <cell>2309.471</cell>
+      <cell>3028.208</cell>
+      <cell>3</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>30</cell>
+      <cell>50</cell>
+      <cell>53.333</cell>
+      <cell>11</cell>
+      <cell>5</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>03/11/2016 18:37:10</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1127.729</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>83.333</cell>
+      <cell>37</cell>
+      <cell>30</cell>
+      <cell>3.135</cell>
+      <cell>2.666</cell>
+      <cell>3.801</cell>
+      <cell>2.513</cell>
+      <cell>1.383</cell>
+      <cell>404.912</cell>
+      <cell>809.467</cell>
+      <cell>1127.729</cell>
+      <cell>9</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>90</cell>
+      <cell>80</cell>
+      <cell>83.333</cell>
+      <cell>1</cell>
+      <cell>3</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>03/11/2016 18:37:07</cell>
+      <cell>gr4</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>838.96</cell>
+      <cell>30</cell>
+      <cell>0</cell>
+      <cell>100</cell>
+      <cell>20</cell>
+      <cell>11</cell>
+      <cell>2.463</cell>
+      <cell>0</cell>
+      <cell>2.915</cell>
+      <cell>2.011</cell>
+      <cell>1.262</cell>
+      <cell>296.082</cell>
+      <cell>577.394</cell>
+      <cell>838.96</cell>
+      <cell>10</cell>
+      <cell>10</cell>
+      <cell>10</cell>
+      <cell>100</cell>
+      <cell>100</cell>
+      <cell>100</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>03/11/2016 18:37:03</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>16</cell>
+      <cell>28</cell>
+      <cell>50</cell>
+      <cell>50</cell>
+      <cell>54</cell>
+      <cell>5.193</cell>
+      <cell>5.767</cell>
+      <cell>3.903</cell>
+      <cell>6.196</cell>
+      <cell>1.478</cell>
+      <cell>1804.484</cell>
+      <cell />
+      <cell />
+      <cell>6</cell>
+      <cell />
+      <cell />
+      <cell>60</cell>
+      <cell />
+      <cell />
+      <cell>16</cell>
+      <cell />
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>03/11/2016 17:33:17</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1045.544</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>80</cell>
+      <cell>13</cell>
+      <cell>22</cell>
+      <cell>2.720</cell>
+      <cell>2.500</cell>
+      <cell>2.420</cell>
+      <cell>3.000</cell>
+      <cell>1.300</cell>
+      <cell>331.674</cell>
+      <cell>729.879</cell>
+      <cell>1045.543</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>75</cell>
+      <cell>80</cell>
+      <cell>1</cell>
+      <cell>3</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>03/11/2016 17:33:15</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2266.76</cell>
+      <cell>30</cell>
+      <cell>24</cell>
+      <cell>53.333</cell>
+      <cell>29</cell>
+      <cell>61</cell>
+      <cell>5.455</cell>
+      <cell>5.080</cell>
+      <cell>6.417</cell>
+      <cell>4.492</cell>
+      <cell>1.362</cell>
+      <cell>810.347</cell>
+      <cell>1584.681</cell>
+      <cell>2266.76</cell>
+      <cell>3</cell>
+      <cell>5</cell>
+      <cell>8</cell>
+      <cell>30</cell>
+      <cell>40</cell>
+      <cell>53.333</cell>
+      <cell>10</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>03/11/2016 16:31:16</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>2087.958</cell>
+      <cell>30</cell>
+      <cell>21</cell>
+      <cell>56.667</cell>
+      <cell>52</cell>
+      <cell>84</cell>
+      <cell>2.777</cell>
+      <cell>3.488</cell>
+      <cell>2.823</cell>
+      <cell>2.727</cell>
+      <cell>1.766</cell>
+      <cell>514.191</cell>
+      <cell>1323.702</cell>
+      <cell>2087.958</cell>
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell>5</cell>
+      <cell>70</cell>
+      <cell>60</cell>
+      <cell>56.666</cell>
+      <cell>4</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>02/11/2016 17:26:17</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1125.99</cell>
+      <cell>30</cell>
+      <cell>7</cell>
+      <cell>76.667</cell>
+      <cell>63</cell>
+      <cell>54</cell>
+      <cell>3.730</cell>
+      <cell>6.360</cell>
+      <cell>3.419</cell>
+      <cell>4.064</cell>
+      <cell>1.315</cell>
+      <cell>445.242</cell>
+      <cell>749.347</cell>
+      <cell>1125.99</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>7</cell>
+      <cell>70</cell>
+      <cell>80</cell>
+      <cell>76.666</cell>
+      <cell>4</cell>
+      <cell>1</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>02/11/2016 17:26:15</cell>
+      <cell>gr4</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1462.962</cell>
+      <cell>30</cell>
+      <cell>11</cell>
+      <cell>70</cell>
+      <cell>11</cell>
+      <cell>17</cell>
+      <cell>2.481</cell>
+      <cell>3.593</cell>
+      <cell>3.011</cell>
+      <cell>1.951</cell>
+      <cell>1.151</cell>
+      <cell>409.08</cell>
+      <cell>996.725</cell>
+      <cell>1462.962</cell>
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell>9</cell>
+      <cell>70</cell>
+      <cell>60</cell>
+      <cell>70</cell>
+      <cell>3</cell>
+      <cell>5</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>02/11/2016 17:26:11</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>28</cell>
+      <cell>24</cell>
+      <cell>57.143</cell>
+      <cell>36</cell>
+      <cell>54</cell>
+      <cell>5.684</cell>
+      <cell>5.178</cell>
+      <cell>4.939</cell>
+      <cell>6.486</cell>
+      <cell>1.647</cell>
+      <cell>1301.515</cell>
+      <cell>2818.591</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell />
+      <cell>70</cell>
+      <cell>60</cell>
+      <cell />
+      <cell>4</cell>
+      <cell>12</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>02/11/2016 16:16:49</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1727.475</cell>
+      <cell>30</cell>
+      <cell>11</cell>
+      <cell>86.667</cell>
+      <cell>14</cell>
+      <cell>23</cell>
+      <cell>3.308</cell>
+      <cell>3.564</cell>
+      <cell>2.111</cell>
+      <cell>4.505</cell>
+      <cell>1.411</cell>
+      <cell>689.133</cell>
+      <cell>1206.037</cell>
+      <cell>1727.475</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>86.666</cell>
+      <cell>4</cell>
+      <cell>5</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>02/11/2016 16:16:47</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1483.64</cell>
+      <cell>30</cell>
+      <cell>12</cell>
+      <cell>80</cell>
+      <cell>27</cell>
+      <cell>36</cell>
+      <cell>5.511</cell>
+      <cell>6.358</cell>
+      <cell>5.720</cell>
+      <cell>5.302</cell>
+      <cell>1.362</cell>
+      <cell>582.06</cell>
+      <cell>1072.431</cell>
+      <cell>1483.64</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>75</cell>
+      <cell>80</cell>
+      <cell>5</cell>
+      <cell>5</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>02/11/2016 14:54:43</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>2069.24</cell>
+      <cell>30</cell>
+      <cell>28</cell>
+      <cell>46.667</cell>
+      <cell>81</cell>
+      <cell>76</cell>
+      <cell>6.389</cell>
+      <cell>9.515</cell>
+      <cell>6.203</cell>
+      <cell>6.588</cell>
+      <cell>2.696</cell>
+      <cell>874.129</cell>
+      <cell>1664.307</cell>
+      <cell>2069.24</cell>
+      <cell>4</cell>
+      <cell>4</cell>
+      <cell>6</cell>
+      <cell>40</cell>
+      <cell>40</cell>
+      <cell>46.666</cell>
+      <cell>11</cell>
+      <cell>13</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>02/11/2016 14:54:41</cell>
+      <cell>gr2</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1517.069</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>83.333</cell>
+      <cell>30</cell>
+      <cell>38</cell>
+      <cell>3.667</cell>
+      <cell>4.154</cell>
+      <cell>5.221</cell>
+      <cell>2.217</cell>
+      <cell>1.582</cell>
+      <cell>687.014</cell>
+      <cell>1168.625</cell>
+      <cell>1517.069</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>80</cell>
+      <cell>83.333</cell>
+      <cell>3</cell>
+      <cell>2</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>02/11/2016 13:45:10</cell>
+      <cell>rd1</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1354.585</cell>
+      <cell>30</cell>
+      <cell>2</cell>
+      <cell>93.333</cell>
+      <cell>21</cell>
+      <cell>17</cell>
+      <cell>3.510</cell>
+      <cell>4.530</cell>
+      <cell>4.526</cell>
+      <cell>2.495</cell>
+      <cell>1.414</cell>
+      <cell>369.501</cell>
+      <cell>749.179</cell>
+      <cell>1354.585</cell>
+      <cell>9</cell>
+      <cell>10</cell>
+      <cell>9</cell>
+      <cell>90</cell>
+      <cell>95</cell>
+      <cell>93.333</cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>01/11/2016 18:31:17</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2321.745</cell>
+      <cell>30</cell>
+      <cell>21</cell>
+      <cell>60</cell>
+      <cell>55</cell>
+      <cell>63</cell>
+      <cell>4.284</cell>
+      <cell>4.624</cell>
+      <cell>5.124</cell>
+      <cell>3.444</cell>
+      <cell>1.229</cell>
+      <cell>787.565</cell>
+      <cell>1683.45</cell>
+      <cell>2321.745</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>60</cell>
+      <cell>60</cell>
+      <cell>60</cell>
+      <cell>4</cell>
+      <cell>10</cell>
+      <cell>7</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>01/11/2016 18:31:15</cell>
+      <cell>gr4</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>3584.42</cell>
+      <cell>30</cell>
+      <cell>19</cell>
+      <cell>63.333</cell>
+      <cell>66</cell>
+      <cell>45</cell>
+      <cell>3.422</cell>
+      <cell>2.838</cell>
+      <cell>3.256</cell>
+      <cell>3.588</cell>
+      <cell>1.256</cell>
+      <cell>864.478</cell>
+      <cell>1799.098</cell>
+      <cell>3584.419</cell>
+      <cell>8</cell>
+      <cell>4</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>60</cell>
+      <cell>63.333</cell>
+      <cell>2</cell>
+      <cell>5</cell>
+      <cell>12</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>01/11/2016 18:31:10</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2775.319</cell>
+      <cell>30</cell>
+      <cell>16</cell>
+      <cell>73.333</cell>
+      <cell>80</cell>
+      <cell>57</cell>
+      <cell>4.152</cell>
+      <cell>4.728</cell>
+      <cell>3.923</cell>
+      <cell>4.380</cell>
+      <cell>2.901</cell>
+      <cell>650.564</cell>
+      <cell>1504.494</cell>
+      <cell>2775.319</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>5</cell>
+      <cell>90</cell>
+      <cell>85</cell>
+      <cell>73.333</cell>
+      <cell>1</cell>
+      <cell>3</cell>
+      <cell>12</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>01/11/2016 17:21:09</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>2389.515</cell>
+      <cell>30</cell>
+      <cell>28</cell>
+      <cell>56.667</cell>
+      <cell>13</cell>
+      <cell>33</cell>
+      <cell>3.550</cell>
+      <cell>4.632</cell>
+      <cell>1.924</cell>
+      <cell>5.293</cell>
+      <cell>1.406</cell>
+      <cell>344.356</cell>
+      <cell>1654.08</cell>
+      <cell>2389.515</cell>
+      <cell>7</cell>
+      <cell>4</cell>
+      <cell>6</cell>
+      <cell>70</cell>
+      <cell>55</cell>
+      <cell>56.666</cell>
+      <cell>2</cell>
+      <cell>20</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>01/11/2016 17:21:06</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1991.011</cell>
+      <cell>30</cell>
+      <cell>13</cell>
+      <cell>66.667</cell>
+      <cell>19</cell>
+      <cell>19</cell>
+      <cell>9.117</cell>
+      <cell>8.929</cell>
+      <cell>8.445</cell>
+      <cell>9.838</cell>
+      <cell>1.657</cell>
+      <cell>729.968</cell>
+      <cell>1451.468</cell>
+      <cell>1991.01</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>70</cell>
+      <cell>70</cell>
+      <cell>66.666</cell>
+      <cell>4</cell>
+      <cell>5</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>01/11/2016 17:21:04</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1040.133</cell>
+      <cell>30</cell>
+      <cell>4</cell>
+      <cell>86.667</cell>
+      <cell>56</cell>
+      <cell>12</cell>
+      <cell>3.123</cell>
+      <cell>4.062</cell>
+      <cell>3.478</cell>
+      <cell>2.768</cell>
+      <cell>1.116</cell>
+      <cell>322.723</cell>
+      <cell>689.753</cell>
+      <cell>1040.132</cell>
+      <cell>10</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>100</cell>
+      <cell>85</cell>
+      <cell>86.666</cell>
+      <cell>0</cell>
+      <cell>3</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>01/11/2016 16:10:38</cell>
+      <cell>bl2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>24</cell>
+      <cell>35</cell>
+      <cell>41.667</cell>
+      <cell>77</cell>
+      <cell>159</cell>
+      <cell>2.779</cell>
+      <cell>2.894</cell>
+      <cell>3.327</cell>
+      <cell>2.231</cell>
+      <cell>1.954</cell>
+      <cell>1058.755</cell>
+      <cell>3183.886</cell>
+      <cell />
+      <cell>4</cell>
+      <cell>4</cell>
+      <cell />
+      <cell>40</cell>
+      <cell>40</cell>
+      <cell />
+      <cell>14</cell>
+      <cell>16</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>01/11/2016 16:10:36</cell>
+      <cell>gr2</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>2732.699</cell>
+      <cell>30</cell>
+      <cell>14</cell>
+      <cell>83.333</cell>
+      <cell>43</cell>
+      <cell>29</cell>
+      <cell>4.145</cell>
+      <cell>3.741</cell>
+      <cell>4.919</cell>
+      <cell>3.370</cell>
+      <cell>1.589</cell>
+      <cell>926.398</cell>
+      <cell>1943.754</cell>
+      <cell>2732.699</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>80</cell>
+      <cell>83.333</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>01/11/2016 15:00:34</cell>
+      <cell>rd1</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3479.232</cell>
+      <cell>30</cell>
+      <cell>1</cell>
+      <cell>96.667</cell>
+      <cell>14</cell>
+      <cell>19</cell>
+      <cell>3.739</cell>
+      <cell>5.021</cell>
+      <cell>3.513</cell>
+      <cell>3.965</cell>
+      <cell>2.261</cell>
+      <cell>1113.665</cell>
+      <cell>3003.537</cell>
+      <cell>3479.232</cell>
+      <cell>10</cell>
+      <cell>9</cell>
+      <cell>10</cell>
+      <cell>100</cell>
+      <cell>95</cell>
+      <cell>96.666</cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>31/10/2016 17:10:04</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>20</cell>
+      <cell>13</cell>
+      <cell>60</cell>
+      <cell>31</cell>
+      <cell>29</cell>
+      <cell>3.914</cell>
+      <cell>6.159</cell>
+      <cell>3.350</cell>
+      <cell>4.535</cell>
+      <cell>6.357</cell>
+      <cell>2334.395</cell>
+      <cell>3525.572</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell />
+      <cell>70</cell>
+      <cell>60</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>31/10/2016 17:10:02</cell>
+      <cell>gr4</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>22</cell>
+      <cell>23</cell>
+      <cell>45.455</cell>
+      <cell>32</cell>
+      <cell>26</cell>
+      <cell>3.206</cell>
+      <cell>3.491</cell>
+      <cell>2.638</cell>
+      <cell>3.722</cell>
+      <cell>1.261</cell>
+      <cell>2124.72</cell>
+      <cell>3198.609</cell>
+      <cell />
+      <cell>6</cell>
+      <cell>3</cell>
+      <cell />
+      <cell>60</cell>
+      <cell>45</cell>
+      <cell />
+      <cell>8</cell>
+      <cell>13</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>31/10/2016 17:10:00</cell>
+      <cell>rd4</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>2699.372</cell>
+      <cell>30</cell>
+      <cell>6</cell>
+      <cell>80</cell>
+      <cell>27</cell>
+      <cell>34</cell>
+      <cell>3.527</cell>
+      <cell>3.971</cell>
+      <cell>2.746</cell>
+      <cell>4.308</cell>
+      <cell>1.480</cell>
+      <cell>732.042</cell>
+      <cell>1689.706</cell>
+      <cell>2699.371</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>90</cell>
+      <cell>85</cell>
+      <cell>80</cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>31/10/2016 17:09:57</cell>
+      <cell>wh4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>21</cell>
+      <cell>13</cell>
+      <cell>66.667</cell>
+      <cell>73</cell>
+      <cell>22</cell>
+      <cell>3.767</cell>
+      <cell>2.960</cell>
+      <cell>2.644</cell>
+      <cell>4.788</cell>
+      <cell>6.045</cell>
+      <cell>1838.756</cell>
+      <cell>3082.179</cell>
+      <cell />
+      <cell>8</cell>
+      <cell>6</cell>
+      <cell />
+      <cell>80</cell>
+      <cell>70</cell>
+      <cell />
+      <cell>1</cell>
+      <cell>9</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>31/10/2016 15:59:53</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>20</cell>
+      <cell>23</cell>
+      <cell>45</cell>
+      <cell>9</cell>
+      <cell>32</cell>
+      <cell>2.951</cell>
+      <cell>3.346</cell>
+      <cell>2.059</cell>
+      <cell>3.932</cell>
+      <cell>1.536</cell>
+      <cell>2035.772</cell>
+      <cell>3593.553</cell>
+      <cell />
+      <cell>5</cell>
+      <cell>4</cell>
+      <cell />
+      <cell>50</cell>
+      <cell>45</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>16</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>31/10/2016 15:59:50</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2605.156</cell>
+      <cell>30</cell>
+      <cell>10</cell>
+      <cell>73.333</cell>
+      <cell>26</cell>
+      <cell>7</cell>
+      <cell>8.567</cell>
+      <cell>22.871</cell>
+      <cell>10.143</cell>
+      <cell>6.992</cell>
+      <cell>2.290</cell>
+      <cell>815.759</cell>
+      <cell>2020.218</cell>
+      <cell>2605.156</cell>
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell>10</cell>
+      <cell>70</cell>
+      <cell>60</cell>
+      <cell>73.333</cell>
+      <cell>2</cell>
+      <cell>8</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>31/10/2016 15:59:48</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1231.724</cell>
+      <cell>30</cell>
+      <cell>4</cell>
+      <cell>86.667</cell>
+      <cell>31</cell>
+      <cell>3</cell>
+      <cell>3.215</cell>
+      <cell>3.067</cell>
+      <cell>4.706</cell>
+      <cell>1.725</cell>
+      <cell>1.191</cell>
+      <cell>577.171</cell>
+      <cell>905.64</cell>
+      <cell>1231.724</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>86.666</cell>
+      <cell>2</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>31/10/2016 14:45:44</cell>
+      <cell>gr2</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3249.337</cell>
+      <cell>30</cell>
+      <cell>13</cell>
+      <cell>76.667</cell>
+      <cell>55</cell>
+      <cell>36</cell>
+      <cell>2.985</cell>
+      <cell>2.527</cell>
+      <cell>3.407</cell>
+      <cell>2.562</cell>
+      <cell>1.698</cell>
+      <cell>787.924</cell>
+      <cell>1717.876</cell>
+      <cell>3249.337</cell>
+      <cell>9</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>90</cell>
+      <cell>80</cell>
+      <cell>76.666</cell>
+      <cell>4</cell>
+      <cell>3</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>31/10/2016 13:38:26</cell>
+      <cell>rd1</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1669.579</cell>
+      <cell>30</cell>
+      <cell>9</cell>
+      <cell>76.667</cell>
+      <cell>83</cell>
+      <cell>94</cell>
+      <cell>3.273</cell>
+      <cell>3.246</cell>
+      <cell>4.248</cell>
+      <cell>2.297</cell>
+      <cell>1.259</cell>
+      <cell>417.7</cell>
+      <cell>995.731</cell>
+      <cell>1669.578</cell>
+      <cell>7</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>70</cell>
+      <cell>75</cell>
+      <cell>76.666</cell>
+      <cell>3</cell>
+      <cell>4</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>28/10/2016 18:08:52</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1255.181</cell>
+      <cell>30</cell>
+      <cell>13</cell>
+      <cell>73.333</cell>
+      <cell>81</cell>
+      <cell>135</cell>
+      <cell>4.060</cell>
+      <cell>4.116</cell>
+      <cell>3.766</cell>
+      <cell>4.335</cell>
+      <cell>2.033</cell>
+      <cell>333.829</cell>
+      <cell>905.053</cell>
+      <cell>1255.181</cell>
+      <cell>8</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+      <cell>80</cell>
+      <cell>70</cell>
+      <cell>73.333</cell>
+      <cell>1</cell>
+      <cell>10</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>28/10/2016 18:08:47</cell>
+      <cell>rd4</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1000.192</cell>
+      <cell>30</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>55</cell>
+      <cell>84</cell>
+      <cell>2.042</cell>
+      <cell>1.778</cell>
+      <cell>1.499</cell>
+      <cell>2.586</cell>
+      <cell>1.076</cell>
+      <cell>312.703</cell>
+      <cell>718.617</cell>
+      <cell>1000.192</cell>
+      <cell>8</cell>
+      <cell>6</cell>
+      <cell>10</cell>
+      <cell>80</cell>
+      <cell>70</cell>
+      <cell>80</cell>
+      <cell>2</cell>
+      <cell>5</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>28/10/2016 16:49:55</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>2493.901</cell>
+      <cell>30</cell>
+      <cell>31</cell>
+      <cell>60</cell>
+      <cell>42</cell>
+      <cell>102</cell>
+      <cell>3.466</cell>
+      <cell>2.483</cell>
+      <cell>4.052</cell>
+      <cell>2.880</cell>
+      <cell>1.359</cell>
+      <cell>824.602</cell>
+      <cell>1642.339</cell>
+      <cell>2493.901</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>5</cell>
+      <cell>70</cell>
+      <cell>65</cell>
+      <cell>60</cell>
+      <cell>10</cell>
+      <cell>12</cell>
+      <cell>9</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>28/10/2016 16:49:53</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1210.487</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>86.667</cell>
+      <cell>17</cell>
+      <cell>17</cell>
+      <cell>4.325</cell>
+      <cell>3.960</cell>
+      <cell>4.642</cell>
+      <cell>4.008</cell>
+      <cell>1.445</cell>
+      <cell>395.353</cell>
+      <cell>835.092</cell>
+      <cell>1210.487</cell>
+      <cell>10</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>100</cell>
+      <cell>90</cell>
+      <cell>86.666</cell>
+      <cell>0</cell>
+      <cell>3</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>28/10/2016 16:49:51</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1545.009</cell>
+      <cell>30</cell>
+      <cell>20</cell>
+      <cell>63.333</cell>
+      <cell>92</cell>
+      <cell>17</cell>
+      <cell>3.272</cell>
+      <cell>3.796</cell>
+      <cell>3.775</cell>
+      <cell>2.768</cell>
+      <cell>1.164</cell>
+      <cell>557.211</cell>
+      <cell>1087.934</cell>
+      <cell>1545.009</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>70</cell>
+      <cell>65</cell>
+      <cell>63.333</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>28/10/2016 15:40:27</cell>
+      <cell>gr2</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1055.429</cell>
+      <cell>30</cell>
+      <cell>3</cell>
+      <cell>90</cell>
+      <cell>86</cell>
+      <cell>140</cell>
+      <cell>3.270</cell>
+      <cell>1.876</cell>
+      <cell>2.956</cell>
+      <cell>3.584</cell>
+      <cell>1.725</cell>
+      <cell>326.17</cell>
+      <cell>647.908</cell>
+      <cell>1055.429</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>90</cell>
+      <cell>90</cell>
+      <cell>90</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>28/10/2016 14:37:35</cell>
+      <cell>bl1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2629.267</cell>
+      <cell>30</cell>
+      <cell>9</cell>
+      <cell>76.667</cell>
+      <cell>28</cell>
+      <cell>40</cell>
+      <cell>4.476</cell>
+      <cell>6.120</cell>
+      <cell>3.872</cell>
+      <cell>5.080</cell>
+      <cell>1.854</cell>
+      <cell>695.218</cell>
+      <cell>1650.229</cell>
+      <cell>2629.266</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>80</cell>
+      <cell>76.666</cell>
+      <cell>3</cell>
+      <cell>2</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>28/10/2016 14:37:33</cell>
+      <cell>rd1</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1152.164</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>83.333</cell>
+      <cell>43</cell>
+      <cell>206</cell>
+      <cell>4.591</cell>
+      <cell>7.777</cell>
+      <cell>5.024</cell>
+      <cell>4.127</cell>
+      <cell>1.517</cell>
+      <cell>419.43</cell>
+      <cell>816.313</cell>
+      <cell>1152.164</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>83.333</cell>
+      <cell>2</cell>
+      <cell>2</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>28/10/2016 14:37:31</cell>
+      <cell>wh1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>10</cell>
+      <cell>25</cell>
+      <cell>40</cell>
+      <cell>60</cell>
+      <cell>54</cell>
+      <cell>11.739</cell>
+      <cell>8.698</cell>
+      <cell>11.732</cell>
+      <cell>11.745</cell>
+      <cell>2.510</cell>
+      <cell>3123.398</cell>
+      <cell />
+      <cell />
+      <cell>4</cell>
+      <cell />
+      <cell />
+      <cell>40</cell>
+      <cell />
+      <cell />
+      <cell>19</cell>
+      <cell />
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>27/10/2016 17:32:45</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1946.025</cell>
+      <cell>30</cell>
+      <cell>19</cell>
+      <cell>66.667</cell>
+      <cell>49</cell>
+      <cell>44</cell>
+      <cell>4.519</cell>
+      <cell>3.825</cell>
+      <cell>4.199</cell>
+      <cell>4.839</cell>
+      <cell>1.381</cell>
+      <cell>672.345</cell>
+      <cell>1277.421</cell>
+      <cell>1946.025</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>7</cell>
+      <cell>70</cell>
+      <cell>65</cell>
+      <cell>66.666</cell>
+      <cell>6</cell>
+      <cell>5</cell>
+      <cell>8</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>27/10/2016 17:32:40</cell>
+      <cell>rd4</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>23</cell>
+      <cell>8</cell>
+      <cell>73.913</cell>
+      <cell>51</cell>
+      <cell>85</cell>
+      <cell>3.785</cell>
+      <cell>5.156</cell>
+      <cell>3.643</cell>
+      <cell>3.953</cell>
+      <cell>1.666</cell>
+      <cell>1749.938</cell>
+      <cell>3326.417</cell>
+      <cell />
+      <cell>4</cell>
+      <cell>10</cell>
+      <cell />
+      <cell>40</cell>
+      <cell>70</cell>
+      <cell />
+      <cell>8</cell>
+      <cell>0</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>27/10/2016 16:29:57</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3412.554</cell>
+      <cell>30</cell>
+      <cell>30</cell>
+      <cell>73.333</cell>
+      <cell>137</cell>
+      <cell>97</cell>
+      <cell>2.610</cell>
+      <cell>2.743</cell>
+      <cell>2.362</cell>
+      <cell>2.857</cell>
+      <cell>1.462</cell>
+      <cell>1432.904</cell>
+      <cell>2499.561</cell>
+      <cell>3412.554</cell>
+      <cell>7</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>70</cell>
+      <cell>75</cell>
+      <cell>73.333</cell>
+      <cell>19</cell>
+      <cell>5</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>27/10/2016 16:29:55</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1994.745</cell>
+      <cell>30</cell>
+      <cell>8</cell>
+      <cell>76.667</cell>
+      <cell>28</cell>
+      <cell>10</cell>
+      <cell>4.713</cell>
+      <cell>3.402</cell>
+      <cell>4.405</cell>
+      <cell>5.020</cell>
+      <cell>1.518</cell>
+      <cell>527.32</cell>
+      <cell>1292.761</cell>
+      <cell>1994.745</cell>
+      <cell>9</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+      <cell>90</cell>
+      <cell>75</cell>
+      <cell>76.666</cell>
+      <cell>1</cell>
+      <cell>5</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>27/10/2016 16:29:52</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>2535.356</cell>
+      <cell>30</cell>
+      <cell>54</cell>
+      <cell>26.667</cell>
+      <cell>126</cell>
+      <cell>101</cell>
+      <cell>3.145</cell>
+      <cell>1.829</cell>
+      <cell>4.150</cell>
+      <cell>2.141</cell>
+      <cell>1.202</cell>
+      <cell>684.691</cell>
+      <cell>1392.959</cell>
+      <cell>2535.356</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+      <cell>3</cell>
+      <cell>20</cell>
+      <cell>25</cell>
+      <cell>26.666</cell>
+      <cell>14</cell>
+      <cell>14</cell>
+      <cell>26</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>27/10/2016 15:33:40</cell>
+      <cell>wh2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1373.263</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>83.333</cell>
+      <cell>15</cell>
+      <cell>22</cell>
+      <cell>3.119</cell>
+      <cell>3.294</cell>
+      <cell>4.002</cell>
+      <cell>2.237</cell>
+      <cell>2.045</cell>
+      <cell>550.41</cell>
+      <cell>910.565</cell>
+      <cell>1373.263</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>83.333</cell>
+      <cell>2</cell>
+      <cell>1</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>27/10/2016 15:28:59</cell>
+      <cell>gr2</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1467.369</cell>
+      <cell>30</cell>
+      <cell>21</cell>
+      <cell>60</cell>
+      <cell>122</cell>
+      <cell>108</cell>
+      <cell>2.349</cell>
+      <cell>1.964</cell>
+      <cell>2.291</cell>
+      <cell>2.407</cell>
+      <cell>1.652</cell>
+      <cell>437.08</cell>
+      <cell>969.323</cell>
+      <cell>1467.369</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>60</cell>
+      <cell>60</cell>
+      <cell>60</cell>
+      <cell>6</cell>
+      <cell>9</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>27/10/2016 15:28:57</cell>
+      <cell>rd2</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1422.111</cell>
+      <cell>30</cell>
+      <cell>5</cell>
+      <cell>86.667</cell>
+      <cell>31</cell>
+      <cell>26</cell>
+      <cell>3.806</cell>
+      <cell>3.920</cell>
+      <cell>4.727</cell>
+      <cell>2.885</cell>
+      <cell>1.477</cell>
+      <cell>439.657</cell>
+      <cell>980.863</cell>
+      <cell>1422.111</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>90</cell>
+      <cell>85</cell>
+      <cell>86.666</cell>
+      <cell>0</cell>
+      <cell>4</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>27/10/2016 14:29:36</cell>
+      <cell>bl1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3591.054</cell>
+      <cell>30</cell>
+      <cell>20</cell>
+      <cell>60</cell>
+      <cell>54</cell>
+      <cell>87</cell>
+      <cell>6.121</cell>
+      <cell>4.481</cell>
+      <cell>6.328</cell>
+      <cell>5.927</cell>
+      <cell>3.840</cell>
+      <cell>674.128</cell>
+      <cell>2231.165</cell>
+      <cell>3591.053</cell>
+      <cell>5</cell>
+      <cell>9</cell>
+      <cell>4</cell>
+      <cell>50</cell>
+      <cell>70</cell>
+      <cell>60</cell>
+      <cell>6</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>27/10/2016 14:29:34</cell>
+      <cell>rd1</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>2710.494</cell>
+      <cell>30</cell>
+      <cell>51</cell>
+      <cell>66.667</cell>
+      <cell>159</cell>
+      <cell>109</cell>
+      <cell>5.077</cell>
+      <cell>6.421</cell>
+      <cell>5.419</cell>
+      <cell>4.736</cell>
+      <cell>1.144</cell>
+      <cell>1323.726</cell>
+      <cell>1968.088</cell>
+      <cell>2710.494</cell>
+      <cell>6</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>60</cell>
+      <cell>65</cell>
+      <cell>66.666</cell>
+      <cell>28</cell>
+      <cell>11</cell>
+      <cell>12</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>27/10/2016 14:29:32</cell>
+      <cell>wh1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>20</cell>
+      <cell>11</cell>
+      <cell>70</cell>
+      <cell>16</cell>
+      <cell>28</cell>
+      <cell>16.314</cell>
+      <cell>10.558</cell>
+      <cell>12.541</cell>
+      <cell>19.709</cell>
+      <cell>3.633</cell>
+      <cell>2407.172</cell>
+      <cell>3545.908</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell />
+      <cell>70</cell>
+      <cell>70</cell>
+      <cell />
+      <cell>6</cell>
+      <cell>4</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>26/10/2016 18:37:37</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1858.841</cell>
+      <cell>30</cell>
+      <cell>17</cell>
+      <cell>53.333</cell>
+      <cell>54</cell>
+      <cell>56</cell>
+      <cell>4.980</cell>
+      <cell>3.575</cell>
+      <cell>6.807</cell>
+      <cell>3.154</cell>
+      <cell>1.938</cell>
+      <cell>601.104</cell>
+      <cell>1084.95</cell>
+      <cell>1858.841</cell>
+      <cell>5</cell>
+      <cell>7</cell>
+      <cell>4</cell>
+      <cell>50</cell>
+      <cell>60</cell>
+      <cell>53.333</cell>
+      <cell>5</cell>
+      <cell>3</cell>
+      <cell>9</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>26/10/2016 18:28:44</cell>
+      <cell>rd4</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1637.752</cell>
+      <cell>30</cell>
+      <cell>17</cell>
+      <cell>63.333</cell>
+      <cell>65</cell>
+      <cell>152</cell>
+      <cell>5.332</cell>
+      <cell>2.968</cell>
+      <cell>2.881</cell>
+      <cell>7.782</cell>
+      <cell>1.320</cell>
+      <cell>621.415</cell>
+      <cell>1155.063</cell>
+      <cell>1637.751</cell>
+      <cell>5</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>50</cell>
+      <cell>60</cell>
+      <cell>63.333</cell>
+      <cell>8</cell>
+      <cell>5</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>26/10/2016 17:35:41</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>11</cell>
+      <cell>45</cell>
+      <cell>54.545</cell>
+      <cell>60</cell>
+      <cell>69</cell>
+      <cell>2.434</cell>
+      <cell>3.508</cell>
+      <cell>2.861</cell>
+      <cell>1.922</cell>
+      <cell>1.379</cell>
+      <cell>3131.22</cell>
+      <cell />
+      <cell />
+      <cell>6</cell>
+      <cell />
+      <cell />
+      <cell>60</cell>
+      <cell />
+      <cell />
+      <cell>40</cell>
+      <cell />
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>26/10/2016 17:35:39</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1907.273</cell>
+      <cell>30</cell>
+      <cell>9</cell>
+      <cell>76.667</cell>
+      <cell>16</cell>
+      <cell>24</cell>
+      <cell>6.229</cell>
+      <cell>6.748</cell>
+      <cell>4.000</cell>
+      <cell>8.309</cell>
+      <cell>1.523</cell>
+      <cell>1003.644</cell>
+      <cell>1391.396</cell>
+      <cell>1907.273</cell>
+      <cell>6</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>60</cell>
+      <cell>75</cell>
+      <cell>76.666</cell>
+      <cell>7</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>26/10/2016 17:35:37</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1619.426</cell>
+      <cell>30</cell>
+      <cell>26</cell>
+      <cell>60</cell>
+      <cell>93</cell>
+      <cell>64</cell>
+      <cell>2.881</cell>
+      <cell>3.235</cell>
+      <cell>3.443</cell>
+      <cell>2.320</cell>
+      <cell>1.044</cell>
+      <cell>522.608</cell>
+      <cell>1066.426</cell>
+      <cell>1619.425</cell>
+      <cell>6</cell>
+      <cell>5</cell>
+      <cell>7</cell>
+      <cell>60</cell>
+      <cell>55</cell>
+      <cell>60</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>10</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>26/10/2016 16:57:02</cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>eline</cell>
+      <cell>1337.715</cell>
+      <cell>30</cell>
+      <cell>15</cell>
+      <cell>73.333</cell>
+      <cell>65</cell>
+      <cell>96</cell>
+      <cell>2.907</cell>
+      <cell>2.275</cell>
+      <cell>3.553</cell>
+      <cell>2.261</cell>
+      <cell>1.586</cell>
+      <cell>411.983</cell>
+      <cell>902.114</cell>
+      <cell>1337.715</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>60</cell>
+      <cell>70</cell>
+      <cell>73.333</cell>
+      <cell>4</cell>
+      <cell>7</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>26/10/2016 16:57:00</cell>
+      <cell>rd2</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1077.999</cell>
+      <cell>30</cell>
+      <cell>2</cell>
+      <cell>93.333</cell>
+      <cell>31</cell>
+      <cell>36</cell>
+      <cell>3.512</cell>
+      <cell>2.409</cell>
+      <cell>4.442</cell>
+      <cell>2.582</cell>
+      <cell>1.582</cell>
+      <cell>286.761</cell>
+      <cell>618.503</cell>
+      <cell>1077.999</cell>
+      <cell>10</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>100</cell>
+      <cell>95</cell>
+      <cell>93.333</cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>26/10/2016 16:56:58</cell>
+      <cell>wh2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1139.526</cell>
+      <cell>30</cell>
+      <cell>2</cell>
+      <cell>93.333</cell>
+      <cell>21</cell>
+      <cell>34</cell>
+      <cell>3.239</cell>
+      <cell>2.752</cell>
+      <cell>3.048</cell>
+      <cell>3.430</cell>
+      <cell>1.237</cell>
+      <cell>360.51</cell>
+      <cell>768.328</cell>
+      <cell>1139.526</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>10</cell>
+      <cell>90</cell>
+      <cell>90</cell>
+      <cell>93.333</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>26/10/2016 15:54:21</cell>
+      <cell>bl1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2504.964</cell>
+      <cell>30</cell>
+      <cell>10</cell>
+      <cell>73.333</cell>
+      <cell>47</cell>
+      <cell>45</cell>
+      <cell>3.955</cell>
+      <cell>3.415</cell>
+      <cell>4.054</cell>
+      <cell>3.856</cell>
+      <cell>3.639</cell>
+      <cell>422.861</cell>
+      <cell>1634.514</cell>
+      <cell>2504.963</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>75</cell>
+      <cell>73.333</cell>
+      <cell>1</cell>
+      <cell>6</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>26/10/2016 15:54:18</cell>
+      <cell>rd1</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3577.43</cell>
+      <cell>30</cell>
+      <cell>72</cell>
+      <cell>56.667</cell>
+      <cell>127</cell>
+      <cell>150</cell>
+      <cell>8.464</cell>
+      <cell>8.104</cell>
+      <cell>7.076</cell>
+      <cell>9.851</cell>
+      <cell>1.280</cell>
+      <cell>1309.045</cell>
+      <cell>2452.073</cell>
+      <cell>3577.429</cell>
+      <cell>5</cell>
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell>50</cell>
+      <cell>55</cell>
+      <cell>56.666</cell>
+      <cell>28</cell>
+      <cell>23</cell>
+      <cell>21</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>26/10/2016 15:54:16</cell>
+      <cell>wh1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>23</cell>
+      <cell>25</cell>
+      <cell>34.783</cell>
+      <cell>35</cell>
+      <cell>68</cell>
+      <cell>7.783</cell>
+      <cell>9.780</cell>
+      <cell>8.762</cell>
+      <cell>6.803</cell>
+      <cell>3.502</cell>
+      <cell>1253.712</cell>
+      <cell>2597.414</cell>
+      <cell />
+      <cell>5</cell>
+      <cell>3</cell>
+      <cell />
+      <cell>50</cell>
+      <cell>40</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>13</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>25/10/2016 19:04:38</cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>230.252</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>32.991</cell>
+      <cell>0</cell>
+      <cell>32.991</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>25/10/2016 17:40:19</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>27</cell>
+      <cell>14</cell>
+      <cell>66.667</cell>
+      <cell>47</cell>
+      <cell>24</cell>
+      <cell>4.452</cell>
+      <cell>5.118</cell>
+      <cell>4.540</cell>
+      <cell>4.370</cell>
+      <cell>7.405</cell>
+      <cell>1220.789</cell>
+      <cell>2553.507</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell />
+      <cell>70</cell>
+      <cell>60</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>25/10/2016 17:28:54</cell>
+      <cell>rd4</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3300.493</cell>
+      <cell>30</cell>
+      <cell>9</cell>
+      <cell>73.333</cell>
+      <cell>93</cell>
+      <cell>83</cell>
+      <cell>5.569</cell>
+      <cell>4.281</cell>
+      <cell>4.578</cell>
+      <cell>6.494</cell>
+      <cell>1.510</cell>
+      <cell>578.725</cell>
+      <cell>1601.483</cell>
+      <cell>3300.493</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+      <cell>8</cell>
+      <cell>60</cell>
+      <cell>70</cell>
+      <cell>73.333</cell>
+      <cell>5</cell>
+      <cell>3</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>25/10/2016 16:38:43</cell>
+      <cell>bl3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>23</cell>
+      <cell>47</cell>
+      <cell>65.217</cell>
+      <cell>69</cell>
+      <cell>84</cell>
+      <cell>7.840</cell>
+      <cell>5.184</cell>
+      <cell>9.078</cell>
+      <cell>6.705</cell>
+      <cell>1.981</cell>
+      <cell>1282.704</cell>
+      <cell>3048.683</cell>
+      <cell />
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell />
+      <cell>70</cell>
+      <cell>65</cell>
+      <cell />
+      <cell>22</cell>
+      <cell>21</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>25/10/2016 16:38:41</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2426.834</cell>
+      <cell>30</cell>
+      <cell>6</cell>
+      <cell>83.333</cell>
+      <cell>9</cell>
+      <cell>39</cell>
+      <cell>5.291</cell>
+      <cell>4.891</cell>
+      <cell>5.467</cell>
+      <cell>5.115</cell>
+      <cell>2.212</cell>
+      <cell>895.101</cell>
+      <cell>1859.455</cell>
+      <cell>2426.834</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>8</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>83.333</cell>
+      <cell>2</cell>
+      <cell>1</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>25/10/2016 16:38:39</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1942.895</cell>
+      <cell>30</cell>
+      <cell>32</cell>
+      <cell>73.333</cell>
+      <cell>58</cell>
+      <cell>49</cell>
+      <cell>2.139</cell>
+      <cell>3.554</cell>
+      <cell>2.531</cell>
+      <cell>1.747</cell>
+      <cell>1.000</cell>
+      <cell>636.154</cell>
+      <cell>1346.506</cell>
+      <cell>1942.895</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>75</cell>
+      <cell>73.333</cell>
+      <cell>10</cell>
+      <cell>13</cell>
+      <cell>9</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>25/10/2016 15:56:43</cell>
+      <cell>wh</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>1381.15</cell>
+      <cell>30</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>30</cell>
+      <cell>45</cell>
+      <cell>2.575</cell>
+      <cell>3.395</cell>
+      <cell>2.642</cell>
+      <cell>2.504</cell>
+      <cell>1.689</cell>
+      <cell>579.372</cell>
+      <cell>911.683</cell>
+      <cell>1381.15</cell>
+      <cell>6</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>60</cell>
+      <cell>75</cell>
+      <cell>80</cell>
+      <cell>6</cell>
+      <cell>1</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>25/10/2016 15:53:30</cell>
+      <cell>gr2</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1483.049</cell>
+      <cell>30</cell>
+      <cell>18</cell>
+      <cell>60</cell>
+      <cell>98</cell>
+      <cell>138</cell>
+      <cell>4.485</cell>
+      <cell>3.379</cell>
+      <cell>4.555</cell>
+      <cell>4.416</cell>
+      <cell>1.653</cell>
+      <cell>433.03</cell>
+      <cell>959.793</cell>
+      <cell>1483.048</cell>
+      <cell>5</cell>
+      <cell>5</cell>
+      <cell>8</cell>
+      <cell>50</cell>
+      <cell>50</cell>
+      <cell>60</cell>
+      <cell>5</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>25/10/2016 15:53:28</cell>
+      <cell>rd2</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1222.434</cell>
+      <cell>30</cell>
+      <cell>9</cell>
+      <cell>83.333</cell>
+      <cell>46</cell>
+      <cell>35</cell>
+      <cell>3.379</cell>
+      <cell>4.127</cell>
+      <cell>4.222</cell>
+      <cell>2.536</cell>
+      <cell>1.757</cell>
+      <cell>490.698</cell>
+      <cell>829.986</cell>
+      <cell>1222.434</cell>
+      <cell>7</cell>
+      <cell>9</cell>
+      <cell>9</cell>
+      <cell>70</cell>
+      <cell>80</cell>
+      <cell>83.333</cell>
+      <cell>5</cell>
+      <cell>1</cell>
+      <cell>3</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>25/10/2016 14:52:29</cell>
+      <cell>bl1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1586.033</cell>
+      <cell>30</cell>
+      <cell>14</cell>
+      <cell>63.333</cell>
+      <cell>51</cell>
+      <cell>72</cell>
+      <cell>4.056</cell>
+      <cell>3.928</cell>
+      <cell>4.370</cell>
+      <cell>3.763</cell>
+      <cell>2.202</cell>
+      <cell>461.267</cell>
+      <cell>1004.461</cell>
+      <cell>1586.032</cell>
+      <cell>8</cell>
+      <cell>5</cell>
+      <cell>6</cell>
+      <cell>80</cell>
+      <cell>65</cell>
+      <cell>63.333</cell>
+      <cell>4</cell>
+      <cell>6</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>25/10/2016 14:52:25</cell>
+      <cell>wh1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>26</cell>
+      <cell>37</cell>
+      <cell>38.462</cell>
+      <cell>85</cell>
+      <cell>63</cell>
+      <cell>12.352</cell>
+      <cell>8.572</cell>
+      <cell>8.194</cell>
+      <cell>16.510</cell>
+      <cell>6.372</cell>
+      <cell>1239.984</cell>
+      <cell>2452.898</cell>
+      <cell />
+      <cell>5</cell>
+      <cell>3</cell>
+      <cell />
+      <cell>50</cell>
+      <cell>40</cell>
+      <cell />
+      <cell>12</cell>
+      <cell>14</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>24/10/2016 18:23:23</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2550.067</cell>
+      <cell>30</cell>
+      <cell>12</cell>
+      <cell>73.333</cell>
+      <cell>59</cell>
+      <cell>42</cell>
+      <cell>4.553</cell>
+      <cell>5.176</cell>
+      <cell>4.727</cell>
+      <cell>4.379</cell>
+      <cell>7.839</cell>
+      <cell>305.702</cell>
+      <cell>1159.356</cell>
+      <cell>2550.067</cell>
+      <cell>9</cell>
+      <cell>5</cell>
+      <cell>8</cell>
+      <cell>90</cell>
+      <cell>70</cell>
+      <cell>73.333</cell>
+      <cell>1</cell>
+      <cell>7</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>24/10/2016 18:23:18</cell>
+      <cell>rd4</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1566.691</cell>
+      <cell>30</cell>
+      <cell>11</cell>
+      <cell>80</cell>
+      <cell>84</cell>
+      <cell>60</cell>
+      <cell>6.854</cell>
+      <cell>4.179</cell>
+      <cell>4.779</cell>
+      <cell>8.930</cell>
+      <cell>1.638</cell>
+      <cell>424.792</cell>
+      <cell>841.358</cell>
+      <cell>1566.691</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>7</cell>
+      <cell>80</cell>
+      <cell>85</cell>
+      <cell>80</cell>
+      <cell>4</cell>
+      <cell>1</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber3 [3]</cell>
+      <cell>24/10/2016 17:30:35</cell>
+      <cell>gr3</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2089.933</cell>
+      <cell>30</cell>
+      <cell>14</cell>
+      <cell>66.667</cell>
+      <cell>55</cell>
+      <cell>74</cell>
+      <cell>4.858</cell>
+      <cell>4.269</cell>
+      <cell>5.266</cell>
+      <cell>4.450</cell>
+      <cell>1.589</cell>
+      <cell>479</cell>
+      <cell>1121.463</cell>
+      <cell>2089.932</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>7</cell>
+      <cell>70</cell>
+      <cell>65</cell>
+      <cell>66.666</cell>
+      <cell>5</cell>
+      <cell>4</cell>
+      <cell>5</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>24/10/2016 17:30:33</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>2635.211</cell>
+      <cell>30</cell>
+      <cell>52</cell>
+      <cell>66.667</cell>
+      <cell>79</cell>
+      <cell>62</cell>
+      <cell>2.702</cell>
+      <cell>3.326</cell>
+      <cell>3.467</cell>
+      <cell>1.938</cell>
+      <cell>1.074</cell>
+      <cell>1065.19</cell>
+      <cell>2131.643</cell>
+      <cell>2635.211</cell>
+      <cell>5</cell>
+      <cell>7</cell>
+      <cell>8</cell>
+      <cell>50</cell>
+      <cell>60</cell>
+      <cell>66.666</cell>
+      <cell>24</cell>
+      <cell>22</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>24/10/2016 16:46:35</cell>
+      <cell>wh2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>2190.917</cell>
+      <cell>30</cell>
+      <cell>17</cell>
+      <cell>73.333</cell>
+      <cell>59</cell>
+      <cell>73</cell>
+      <cell>2.284</cell>
+      <cell>3.420</cell>
+      <cell>2.511</cell>
+      <cell>2.057</cell>
+      <cell>1.282</cell>
+      <cell>878.44</cell>
+      <cell>1740.739</cell>
+      <cell>2190.916</cell>
+      <cell>8</cell>
+      <cell>5</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>65</cell>
+      <cell>73.333</cell>
+      <cell>6</cell>
+      <cell>9</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>24/10/2016 16:43:27</cell>
+      <cell>rd2</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1753.056</cell>
+      <cell>30</cell>
+      <cell>21</cell>
+      <cell>43.333</cell>
+      <cell>74</cell>
+      <cell>102</cell>
+      <cell>4.663</cell>
+      <cell>3.024</cell>
+      <cell>3.938</cell>
+      <cell>5.439</cell>
+      <cell>1.325</cell>
+      <cell>541.626</cell>
+      <cell>1210.071</cell>
+      <cell>1753.056</cell>
+      <cell>5</cell>
+      <cell>4</cell>
+      <cell>4</cell>
+      <cell>50</cell>
+      <cell>45</cell>
+      <cell>43.333</cell>
+      <cell>5</cell>
+      <cell>10</cell>
+      <cell>6</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>24/10/2016 15:54:15</cell>
+      <cell>wh1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2974.677</cell>
+      <cell>30</cell>
+      <cell>9</cell>
+      <cell>76.667</cell>
+      <cell>73</cell>
+      <cell>43</cell>
+      <cell>9.325</cell>
+      <cell>7.573</cell>
+      <cell>12.281</cell>
+      <cell>6.368</cell>
+      <cell>8.838</cell>
+      <cell>1078.642</cell>
+      <cell>2273.565</cell>
+      <cell>2974.677</cell>
+      <cell>9</cell>
+      <cell>5</cell>
+      <cell>9</cell>
+      <cell>90</cell>
+      <cell>70</cell>
+      <cell>76.666</cell>
+      <cell>2</cell>
+      <cell>5</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber4 [4]</cell>
+      <cell>21/10/2016 18:58:17</cell>
+      <cell>bl4</cell>
+      <cell>scop</cell>
+      <cell>
+      </cell>
+      <cell>1352.171</cell>
+      <cell>30</cell>
+      <cell>11</cell>
+      <cell>70</cell>
+      <cell>74</cell>
+      <cell>47</cell>
+      <cell>4.549</cell>
+      <cell>9.945</cell>
+      <cell>4.242</cell>
+      <cell>4.855</cell>
+      <cell>1.858</cell>
+      <cell>428.502</cell>
+      <cell>1050.391</cell>
+      <cell>1352.171</cell>
+      <cell>6</cell>
+      <cell>5</cell>
+      <cell>10</cell>
+      <cell>60</cell>
+      <cell>55</cell>
+      <cell>70</cell>
+      <cell>3</cell>
+      <cell>8</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>21/10/2016 18:58:15</cell>
+      <cell>rd4</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1188.474</cell>
+      <cell>30</cell>
+      <cell>13</cell>
+      <cell>70</cell>
+      <cell>130</cell>
+      <cell>96</cell>
+      <cell>3.154</cell>
+      <cell>4.443</cell>
+      <cell>2.187</cell>
+      <cell>4.121</cell>
+      <cell>1.388</cell>
+      <cell>479.23</cell>
+      <cell>813.429</cell>
+      <cell>1188.474</cell>
+      <cell>6</cell>
+      <cell>9</cell>
+      <cell>6</cell>
+      <cell>60</cell>
+      <cell>75</cell>
+      <cell>70</cell>
+      <cell>7</cell>
+      <cell>2</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>21/10/2016 18:08:58</cell>
+      <cell>wh3</cell>
+      <cell>mk</cell>
+      <cell>eline</cell>
+      <cell>1710.369</cell>
+      <cell>30</cell>
+      <cell>30</cell>
+      <cell>63.333</cell>
+      <cell>135</cell>
+      <cell>67</cell>
+      <cell>1.864</cell>
+      <cell>3.702</cell>
+      <cell>2.382</cell>
+      <cell>1.346</cell>
+      <cell>0.990</cell>
+      <cell>665.82</cell>
+      <cell>1114.694</cell>
+      <cell>1710.369</cell>
+      <cell>6</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>60</cell>
+      <cell>65</cell>
+      <cell>63.333</cell>
+      <cell>13</cell>
+      <cell>6</cell>
+      <cell>11</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber2 [2]</cell>
+      <cell>21/10/2016 17:06:47</cell>
+      <cell>rd2</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>1294.028</cell>
+      <cell>30</cell>
+      <cell>10</cell>
+      <cell>76.667</cell>
+      <cell>63</cell>
+      <cell>47</cell>
+      <cell>3.859</cell>
+      <cell>2.788</cell>
+      <cell>4.950</cell>
+      <cell>2.767</cell>
+      <cell>1.326</cell>
+      <cell>315.419</cell>
+      <cell>821.453</cell>
+      <cell>1294.027</cell>
+      <cell>8</cell>
+      <cell>6</cell>
+      <cell>9</cell>
+      <cell>80</cell>
+      <cell>70</cell>
+      <cell>76.666</cell>
+      <cell>1</cell>
+      <cell>8</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>21/10/2016 17:06:45</cell>
+      <cell>wh2</cell>
+      <cell>sal</cell>
+      <cell>eline</cell>
+      <cell>3600</cell>
+      <cell>28</cell>
+      <cell>44</cell>
+      <cell>57.143</cell>
+      <cell>144</cell>
+      <cell>137</cell>
+      <cell>4.294</cell>
+      <cell>3.725</cell>
+      <cell>3.215</cell>
+      <cell>5.450</cell>
+      <cell>3.283</cell>
+      <cell>1340.876</cell>
+      <cell>2459.953</cell>
+      <cell />
+      <cell>6</cell>
+      <cell>6</cell>
+      <cell />
+      <cell>60</cell>
+      <cell>60</cell>
+      <cell />
+      <cell>19</cell>
+      <cell>14</cell>
+      <cell />
+    </row>
+    <row>
+      <cell>Mouse Pairwise Discrimination v3</cell>
+      <cell>Chamber1 [1]</cell>
+      <cell>21/10/2016 15:42:20</cell>
+      <cell>wh1</cell>
+      <cell>scop</cell>
+      <cell>eline</cell>
+      <cell>2177.228</cell>
+      <cell>30</cell>
+      <cell>24</cell>
+      <cell>66.667</cell>
+      <cell>154</cell>
+      <cell>92</cell>
+      <cell>10.188</cell>
+      <cell>8.328</cell>
+      <cell>9.617</cell>
+      <cell>10.800</cell>
+      <cell>2.880</cell>
+      <cell>638.144</cell>
+      <cell>1339.082</cell>
+      <cell>2177.228</cell>
+      <cell>8</cell>
+      <cell>7</cell>
+      <cell>5</cell>
+      <cell>80</cell>
+      <cell>75</cell>
+      <cell>66.666</cell>
+      <cell>7</cell>
+      <cell>7</cell>
+      <cell>10</cell>
+    </row>
+  </results>
+</report-format>
