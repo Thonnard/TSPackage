@@ -4,15 +4,15 @@
 # When criterion was never reached, criterion value will be "NA" 
 #
 # Parameters
-# data: xlsx format, requiring "% Correct", "Session", "Animal ID", "Lesion"
+# data: csv format
 # crit: number of successive sessions to reach criterion, default = 2
 # score: % correct needed to reach criterion, default = 80
 #
 # Example
-# softCriterion("Acquisition - Liam.xlsx")
+# softCriterion("data.csv")
 #
 # TODO
-# change data reading mode to csv instead of xlsx
+# add optional dv parameter
 
 softCriterion <- function(data, crit = 2, score = 80) {
   # read data
@@ -20,7 +20,7 @@ softCriterion <- function(data, crit = 2, score = 80) {
   
   # attach
   attach(data)
-  
+
   # calculate success
   data$Success <- ifelse(PercCorrect >= score, "TRUE", "FALSE")
   
