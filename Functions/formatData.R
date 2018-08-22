@@ -12,13 +12,13 @@ formatData <- function(data){
   for (i in 1:ncol(data)) {names(data)[i] <- coln[i]}
   
   # order data
-  data <- data[with(data, order(Animal,RunTime)), ]
+  data <- data[with(data, order(Animal,as.Date(RunTime, format="%d/%m/%Y"))), ]
   
   # correct duration (comma vs dots)
   # if(x > 3700){x <- x/1000}
   
   # add extra columns (perseveration etc, SESSION!!)
-  # data$Session <- 
+  data$Session <- sequence(rle(as.character(data$Animal))$lengths)
   # data$Perseversation <-
   
   # remove NAs or give warning
