@@ -13,6 +13,7 @@
 #
 # TODO
 # change data reading mode to csv instead of xlsx
+# make sure data is ordered for Session!!
 
 softCriterion <- function(data, crit = 2, score = 80) {
   # read data
