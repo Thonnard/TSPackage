@@ -2,14 +2,17 @@ formatData <- function(data){
   # read data
   data <- read.csv(data, header = TRUE, sep = ",")
   
-  # change column names (coln should contain every column name)
-  coln <- c("Protocol","Box", "RunTime", "Animal", "Group", "User", "Duration", "TotalTrials", "CorrectionTrials",
+  # change column names (coln should contain every column name in this dataset in right order)
+  coln <- c("Protocol", "Box", "RunTime", "Animal", "Group", "User", "Duration", "TotalTrials", "CorrectionTrials",
             "PercCorrect", "LeftITITouches", "RightITITouches", "Latency_CorrectTouch", "Latency_IncorrectTouch", 
             "Latency_CorrectLeftTouch", "Latency_CorrectRightTouch", "Latency_CorrectRewardCollection", 
-            "Duration_10block_1", "Duration_10block_2", "Duration_10block_3", "CorrectTrials_10block_1",
-            "CorrectTrials_10block_2", "CorrectTrials_10block_3", "PercCorrect_10block_1", "PercCorrect_10block_2", 
-            "PercCorrect_10block_3", "CorrectionTrials_10block_1", "CorrectionTrials_10block_2", "CorrectionTrials_10block_3")
+            "Duration_block_1", "Duration_block_2", "Duration_block_3", "CorrectTrials_block_1",
+            "CorrectTrials_block_2", "CorrectTrials_block_3", "PercCorrect_block_1", "PercCorrect_block_2", 
+            "PercCorrect_block_3", "CorrectionTrials_block_1", "CorrectionTrials_block_2", "CorrectionTrials_block_3")
   for (i in 1:ncol(data)) {names(data)[i] <- coln[i]}
+  
+  # order data
+  data <- data[with(data, order(Animal,RunTime)), ]
   
   # correct duration (comma vs dots)
   # if(x > 3700){x <- x/1000}
@@ -18,8 +21,7 @@ formatData <- function(data){
   # data$Session <- 
   # data$Perseversation <-
   
-  # order data
-  data <- data[with(data, order(Animal,Session)), ]
+  # remove NAs or give warning
   
   # save data
   write.csv(data, "data.cvs", row.names=FALSE)
