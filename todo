@@ -2,6 +2,8 @@ R PROJECT – TOUCHSCREEN DATA
 
 Workflow
 
+0. Create R function to merge data from left and right boxes
+
 1.	Load data into R.
 -	R_Analysis_PD.abetRpt is file used to extract files from ABET II Software for operant touchscreen chambers. 
   Stored on shared network drive (J:).
