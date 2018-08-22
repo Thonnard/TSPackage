@@ -11,6 +11,10 @@ formatData <- function(data, group = "all"){
             "PercCorrect_block_3", "CorrectionTrials_block_1", "CorrectionTrials_block_2", "CorrectionTrials_block_3")
   for (i in 1:ncol(data)) {names(data)[i] <- coln[i]}
   
+  # set variable type
+  data$Group <- as.character(data$Group)
+  #...
+  
   # order data
   data <- data[with(data, order(Animal,as.Date(RunTime, format="%d/%m/%Y"))), ]
   
