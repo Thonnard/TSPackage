@@ -7,7 +7,10 @@ formatData <- function(data){
   # correct duration (comma vs dots)
   # x <- x/1000
   
-  # add extra columns (perseveration etc)
+  # add extra columns (perseveration etc, SESSION!!)
+  
+  # order data
+  data <- data[with(data, order(Animal,Session)), ]
   
   # save data
   write.csv(data, "data.cvs", row.names=FALSE)
