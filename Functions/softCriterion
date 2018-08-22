@@ -16,13 +16,16 @@
 
 softCriterion <- function(data, crit = 2, score = 80) {
   # read data
-  data <- read_excel(data)
+  data <- read.csv(data, header = TRUE, sep = ",")
+  
+  # attach
+  attach(data)
   
   # calculate success
-  data$success <- ifelse(data$"% Correct" >= score, "TRUE", "FALSE")
+  data$Success <- ifelse(PercCorrect >= score, "TRUE", "FALSE")
   
   # variables for output
-  list <- unique(data$'Animal ID')
+  list <- unique(Animal)
   id <- vector(length = 0)
   group <- vector(length = 0)
   criterion <- vector(length = 0)
@@ -30,22 +33,22 @@ softCriterion <- function(data, crit = 2, score = 80) {
   # for loop for every subject
   for(i in list) {
     # select data for every animal
-    dataID <- data[data[, "Animal ID"] == i,]
+    dataID <- data[data[, "Animal"] == i,]
     
-    # order data correctly (critical)
+    # order data correctly
     dataID <- dataID[with(dataID, order(Session)), ]
     
     # determine sequence | this needs to be in this for loop to avoid mistakes!
-    dataID$seq <- sequence(rle(as.character(dataID$success))$lengths)
+    dataID$seq <- sequence(rle(as.character(dataID$Success))$lengths)
     
     # isolate critical session number
-    criterion[i] <- dataID[dataID[, "success"] == "TRUE" & dataID[, "seq"] == crit,]$Session[1]
+    criterion[i] <- dataID[dataID[, "Success"] == "TRUE" & dataID[, "seq"] == crit,]$Session[1]
     
     # ID
     id[i] <- i
     
     # Group
-    group[i] <- dataID$Lesion[1]    
+    group[i] <- as.character(dataID$Group[1])
   }
   
   # create output table
@@ -54,6 +57,9 @@ softCriterion <- function(data, crit = 2, score = 80) {
   
   # write table to csv file
   write.csv(output, file = "softCriterionOutput.csv")
+  
+  # detach
+  detach(data)
   
   # return table in console
   return(output)
