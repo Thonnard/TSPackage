@@ -24,6 +24,10 @@ formatData <- function(data){
   names(data)[names(data)=="CorrectionTrials_10block..2."] <- ""
   names(data)[names(data)=="CorrectionTrials_10block..3."] <- ""
 
+  # maybe it's better to work with a list and for loop, in case the column names differ depending on platform... (should work fine as long as order doesn't change)
+  coln <- c("Schedule","Box", "...")  # should contain every column name
+  for (i in 1:ncol(data)) {names(data)[i] <- coln[i]}
+  
   # correct duration (comma vs dots)
   # if(x > 3700){x <- x/1000}
   
@@ -37,4 +41,3 @@ formatData <- function(data){
   # save data
   write.csv(data, "data.cvs", row.names=FALSE)
 }
-
