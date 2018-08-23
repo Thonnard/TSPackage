@@ -3,9 +3,9 @@ formatData <- function(data, group = "all"){
   data <- read.csv(data, header = TRUE, sep = ",")
   
   # change column names (coln should contain every column name in this dataset in right order)
-  coln <- c("Protocol", "Box", "RunTime", "Animal", "Group", "User", "Duration", "TotalTrials", "CorrectionTrials",
-            "PercCorrect", "LeftITITouches", "RightITITouches", "Latency_CorrectTouch", "Latency_IncorrectTouch", 
-            "Latency_CorrectLeftTouch", "Latency_CorrectRightTouch", "Latency_CorrectRewardCollection", 
+  coln <- c("Protocol", "Box", "TestDate", "Animal", "Group", "User", "Duration", "Trials", "CorrectionTrials",
+            "PercCorrect", "LeftITITouches", "RightITITouches", "Latency_Correct", "Latency_Incorrect", 
+            "Latency_CorrectLeft", "Latency_CorrectRight", "Latency_RewardCollection", 
             "Duration_block_1", "Duration_block_2", "Duration_block_3", "CorrectTrials_block_1",
             "CorrectTrials_block_2", "CorrectTrials_block_3", "PercCorrect_block_1", "PercCorrect_block_2", 
             "PercCorrect_block_3", "CorrectionTrials_block_1", "CorrectionTrials_block_2", "CorrectionTrials_block_3")
@@ -16,7 +16,7 @@ formatData <- function(data, group = "all"){
   #...
   
   # order data
-  data <- data[with(data, order(Animal,as.Date(RunTime, format="%d/%m/%Y"))), ]
+  data <- data[with(data, order(Animal,as.Date(TestDate, format="%d/%m/%Y"))), ]
   
   # correct duration (comma vs dots)
   # if(x > 3700){x <- x/1000}
