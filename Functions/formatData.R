@@ -58,13 +58,23 @@ formatData <- function(data, group = "all"){
   data <- data[with(data, order(Animal,as.Date(TestDate, format="%d/%m/%Y"))), ]
 
   # extra columns
-  # sessions
-  data$Session <- sequence(rle(as.character(data$Animal))$lengths)
-  # log transformation to reaction time data
-  logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
-                "Latency_RewardCollection")
+      # sessions
+      data$Session <- sequence(rle(as.character(data$Animal))$lengths)
+  
+      # log transformation reaction time data
+      logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
+                    "Latency_RewardCollection")
       data[paste("Log", logs, sep="_")] <- log(data[logs])
-  # data$Perseversation <-
+  
+      #correct trials per session
+      data <- transform(data, CorrectTrials = Trials*(PercCorrect)/100)
+      data$CorrectTrials <- round(data$CorrectTrials)
+      
+      #incorrect trials per session
+      data <- transform(data, IncorrectTrials = Trials - CorrectTrials)
+  
+      #perseveration index (e.g., Brigman, et al., 2008; Piiponniemi, et al., 2017)
+      data <- transform(data, PerseverationIndex = CorrectionTrials/(IncorrectTrials))
 
   # select groups (optional)
   if (group != "all") {
