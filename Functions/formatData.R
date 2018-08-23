@@ -1,5 +1,5 @@
 # Description
-# formatData formats csv dataset acquired with original ABET output file "PD_RV_Analysis.abetRpt" into a csv data file optimized for TSPackage. 
+# formatData formats csv dataset acquired with original ABET output file "PD_RV_Analysis.abetRpt" into a csv/xlsx data files optimized for TSPackage. 
 #
 # Parameters
 # data: requires csv dataset containing 29 columns non-randomly ordered. This dataset can be acquired using this ABET output file: TSPackage/GetOutput/PD_RV_Analysis.abetRpt 
@@ -11,7 +11,10 @@
 
 formatData <- function(data, group = "all"){
   # read data
-  data <- read.csv(data, header = TRUE, sep = ",")
+  #data <- read.csv(data, header = TRUE, sep = ",")
+  require(data.table)
+  data <- fread(data)
+  data <- as.data.frame(data)
   
   # change column names (coln should contain every column name in this dataset in right order)
   coln <- c("Protocol", "Box", "TestDate", "Animal", "Group", "User", "Duration", "Trials", "CorrectionTrials",
@@ -53,27 +56,27 @@ formatData <- function(data, group = "all"){
   
   # order data
   data <- data[with(data, order(Animal,as.Date(TestDate, format="%d/%m/%Y"))), ]
-
+  
   # extra columns
-      # sessions
-      data$Session <- sequence(rle(as.character(data$Animal))$lengths)
+  # sessions
+  data$Session <- sequence(rle(as.character(data$Animal))$lengths)
   
-      # correct trials per session
-      data <- transform(data, CorrectTrials = Trials*(PercCorrect)/100)
-      data$CorrectTrials <- round(data$CorrectTrials)
-      
-      # incorrect trials per session
-      data <- transform(data, IncorrectTrials = Trials - CorrectTrials)
+  # correct trials per session
+  data <- transform(data, CorrectTrials = Trials*(PercCorrect)/100)
+  data$CorrectTrials <- round(data$CorrectTrials)
   
-      # perseveration index (e.g., Brigman, et al., 2008; Piiponniemi, et al., 2017)
-      data <- transform(data, PerseverationIndex = CorrectionTrials/(IncorrectTrials)) # results in "NA" when incorrect trials = 0
-      #data[c("PerseverationIndex")][is.na(data[c("PerseverationIndex")])] <- 0  #replaces "NA" with 0. Not sure if legit.
+  # incorrect trials per session
+  data <- transform(data, IncorrectTrials = Trials - CorrectTrials)
   
-      # log transformation reaction time data
-      logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
-                "Latency_RewardCollection")
-      data[paste("Log", logs, sep="_")] <- log(data[logs])
-
+  # perseveration index (e.g., Brigman, et al., 2008; Piiponniemi, et al., 2017)
+  data <- transform(data, PerseverationIndex = CorrectionTrials/(IncorrectTrials)) # results in "NA" when incorrect trials = 0
+  #data[c("PerseverationIndex")][is.na(data[c("PerseverationIndex")])] <- 0  #replaces "NA" with 0. Not sure if legit.
+  
+  # log transformation reaction time data
+  logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
+            "Latency_RewardCollection")
+  data[paste("Log", logs, sep="_")] <- log(data[logs])
+  
   # select groups (optional)
   if (group != "all") {
     data <- data[data[, "Group"] == group,]
@@ -81,28 +84,30 @@ formatData <- function(data, group = "all"){
   
   # save data
   write.csv(data, "data.csv", row.names=FALSE)
+  require(xlsx) #depends on java
+  write.xlsx(data, "data.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
   
   # create return table
   a <- unique(data$Group)
   if(!is.na(a[1])) {
-   N <- vector(length = 0)
+    N <- vector(length = 0)
     for(i in a){
       temp <- data[data[,"Group"] == i,]
       N[i] <- length(unique(temp$Animal))
-       }
+    }
     table <- as.data.frame(N)
-    } 
+  } 
   else {
     say <- c("Data set contains no group information.")
   }
   
   # return
   dir <- getwd()
-  message <- paste("Output file ('data.csv') saved in: ", dir, sep="")
+  message <- paste("Output files ('data.csv' & 'data.xlsx') saved in: ", dir, sep="")
   count <- length(a)
   list <- list("File" = message,  " Number of groups" = count, "Animals per group" = table)
   if(!is.na(a[1])) {
-  return(list)  
+    return(list)  
   }
   else {
     list2 <- list("File" = message, "Groups" = say)
