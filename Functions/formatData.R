@@ -93,7 +93,7 @@ formatData <- function(data, group = "all"){
   
   # return
   dir <- getwd()
-  message <- paste("Output file saved in: ", dir, sep="")
+  message <- paste("Output file ('data.csv') saved in: ", dir, sep="")
   count <- length(a)
   list <- list("File" = message,  " Number of groups" = count, "Animals per group" = table)
   return(list)  
