@@ -1,3 +1,6 @@
+# TODO
+# check variable type for Sessions
+
 formatData <- function(data, group = "all"){
   # read data
   data <- read.csv(data, header = TRUE, sep = ",")
@@ -30,22 +33,28 @@ formatData <- function(data, group = "all"){
   data$Duration_block_1 <- as.numeric(gsub(",", ".", data$Duration_block_1))
   data$Duration_block_2 <- as.numeric(gsub(",", ".", data$Duration_block_2))
   data$Duration_block_3 <- as.numeric(gsub(",", ".", data$Duration_block_3))
+  data$CorrectionTrials_block_1 <- as.numeric(data$CorrectionTrials_block_1)
+  data$CorrectionTrials_block_2 <- as.numeric(data$CorrectionTrials_block_2)
+  data$CorrectionTrials_block_3 <- as.numeric(data$CorrectionTrials_block_3)
+  data$PercCorrect_block_1 <- as.numeric(gsub(",", ".", data$PercCorrect_block_1))
+  data$PercCorrect_block_2 <- as.numeric(gsub(",", ".", data$PercCorrect_block_2))
+  data$PercCorrect_block_3 <- as.numeric(gsub(",", ".", data$PercCorrect_block_3))
+  data$CorrectionTrials_block_1 <- as.numeric(data$CorrectionTrials_block_1)
+  data$CorrectionTrials_block_2 <- as.numeric(data$CorrectionTrials_block_2)
+  data$CorrectionTrials_block_3 <- as.numeric(data$CorrectionTrials_block_3)
   
   # order data
   data <- data[with(data, order(Animal,as.Date(TestDate, format="%d/%m/%Y"))), ]
-  
-  # correct duration (comma vs dots)
-  # if(x > 3700){x <- x/1000}
-  
-  # add extra columns (log, perseveration index)
-      #Add log transformation to reaction time data
-      logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
+
+  # extra columns
+  # sessions
+  data$Session <- sequence(rle(as.character(data$Animal))$lengths)
+  # log transformation to reaction time data
+  logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
                 "Latency_RewardCollection")
       data[paste("Log", logs, sep="_")] <- log(data[logs])
-  
-  data$Session <- sequence(rle(as.character(data$Animal))$lengths)
   # data$Perseversation <-
-  
+
   # select groups
   
   # remove NAs or give warning
