@@ -9,8 +9,9 @@
 # formatData("mydata.csv")
 # formatData(data="mydata.csv", group=c("controls", "drug1", "drug3"))
 
-formatData <- function(data, group = "all"){
+formatData <- function(data, group="all"){
   # read data
+  #data <- read.csv(data, header = TRUE, sep = ",")
   require(data.table)
   data <- fread(data)
   data <- as.data.frame(data)
@@ -77,10 +78,10 @@ formatData <- function(data, group = "all"){
   data[paste("Log", logs, sep="_")] <- log(data[logs])
   
   # select groups (optional)
-  if (group != "all") {
-    data <- data[data[, "Group"] == group,]
+  if (group[1] != "all") {
+    data <- data[data[, "Group"] %in% group,]
   }
-  
+
   # save data
   write.csv(data, "data.csv", row.names=FALSE)
   require(xlsx) #depends on java
