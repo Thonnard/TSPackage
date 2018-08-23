@@ -84,7 +84,7 @@ formatData <- function(data, group="all"){
 
   # save data
   write.csv(data, "data.csv", row.names=FALSE)
-  require(xlsx) #depends on java
+  require(xlsx) # depends on java!
   write.xlsx(data, "data.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
   
   # create return table
