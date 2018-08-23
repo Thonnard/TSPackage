@@ -1,16 +1,13 @@
 # Description
-# formatData returns...
+# formatData formats csv dataset acquired with original ABET output file "PD_RV_Analysis.abetRpt" into a csv data file optimized for TSPackage. 
 #
 # Parameters
-# data, requires csv dataset containing 29 columns non-randomly ordered. This dataset can be acquired using this ABET output file: TSPackage/GetOutput/PD_RV_Analysis.abetRpt 
-# group, optional, default includes all groups
+# data: requires csv dataset containing 29 columns non-randomly ordered. This dataset can be acquired using this ABET output file: TSPackage/GetOutput/PD_RV_Analysis.abetRpt 
+# group: optional, default includes all groups
 #
 # Examples
 # formatData("mydata.csv")
 # formatData(data="mydata.csv", group=c("controls", "drug1", "drug3"))
-#
-# TODO
-# check variable type for Sessions
 
 formatData <- function(data, group = "all"){
   # read data
@@ -61,15 +58,15 @@ formatData <- function(data, group = "all"){
       # sessions
       data$Session <- sequence(rle(as.character(data$Animal))$lengths)
   
-      #correct trials per session
+      # correct trials per session
       data <- transform(data, CorrectTrials = Trials*(PercCorrect)/100)
       data$CorrectTrials <- round(data$CorrectTrials)
       
-      #incorrect trials per session
+      # incorrect trials per session
       data <- transform(data, IncorrectTrials = Trials - CorrectTrials)
   
-      #perseveration index (e.g., Brigman, et al., 2008; Piiponniemi, et al., 2017)
-      data <- transform(data, PerseverationIndex = CorrectionTrials/(IncorrectTrials))
+      # perseveration index (e.g., Brigman, et al., 2008; Piiponniemi, et al., 2017)
+      data <- transform(data, PerseverationIndex = CorrectionTrials/(IncorrectTrials)) # results in "NA" when incorrect trials = 0
       #data[c("PerseverationIndex")][is.na(data[c("PerseverationIndex")])] <- 0  #replaces "NA" with 0. Not sure if legit.
   
       # log transformation reaction time data
@@ -95,5 +92,8 @@ formatData <- function(data, group = "all"){
   table <- as.data.frame(N)
   
   # return
-  return(table)  
+  dir <- getwd()
+  message <- paste("Output file saved in: ", dir, sep="")
+  list <- list("File" = message, "Animals per group" = table)
+  return(list)  
 }
