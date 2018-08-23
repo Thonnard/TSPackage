@@ -85,7 +85,13 @@ formatData <- function(data, group = "all"){
   write.csv(data, "data.csv", row.names=FALSE)
   
   # create return table
-  table <- 
+  a <- unique(data$Group)
+  N <- vector(length = 0)
+  for(i in a){
+    temp <- data[data[,"Group"] == i,]
+    N[i] <- length(unique(temp$Animal))
+    }
+  table <- as.data.frame(N)
   
   # return
   return(table)  
