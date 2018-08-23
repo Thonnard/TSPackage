@@ -31,15 +31,18 @@ formatData <- function(data, group = "all"){
   data$Duration_block_2 <- as.numeric(gsub(",", ".", data$Duration_block_2))
   data$Duration_block_3 <- as.numeric(gsub(",", ".", data$Duration_block_3))
   
-  
-  
   # order data
   data <- data[with(data, order(Animal,as.Date(TestDate, format="%d/%m/%Y"))), ]
   
   # correct duration (comma vs dots)
   # if(x > 3700){x <- x/1000}
   
-  # add extra columns (perseveration etc, SESSION!!)
+  # add extra columns (log, perseveration index)
+      #Add log transformation to reaction time data
+      logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
+                "Latency_RewardCollection")
+      data[paste("Log", logs, sep="_")] <- log(data[logs])
+  
   data$Session <- sequence(rle(as.character(data$Animal))$lengths)
   # data$Perseversation <-
   
