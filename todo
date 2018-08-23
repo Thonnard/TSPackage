@@ -21,9 +21,9 @@ Workflow
   
 -	Functions compatible for every variable:
   Descriptives function. 
-    Parameters: DV, Group, Data.
-    Make table and visualize with boxplots.
-      To do: Add Q1, Q3, and IQR in table.
+  Parameters: DV, Group, Data.
+  Make table and visualize with boxplots.
+  To do: Add Q1, Q3, and IQR in table.
 
 -	RMAnova function.
   Parameters: DV, Group, Time, Data.
