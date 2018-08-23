@@ -40,7 +40,7 @@ formatData <- function(data, group = "all"){
   data$Latency_Incorrect <- as.numeric(gsub(",", ".", data$Latency_Incorrect))
   data$Latency_CorrectLeft <- as.numeric(gsub(",", ".", data$Latency_CorrectLeft))
   data$Latency_CorrectRight <- as.numeric(gsub(",", ".", data$Latency_CorrectRight))
-  data$Latency_RewardCollection <- as.numeric(gsub(",", ".", Latency_Reward$Collection))
+  data$Latency_RewardCollection <- as.numeric(gsub(",", ".", data$Latency_RewardCollection))
   data$Duration_block_1 <- as.numeric(gsub(",", ".", data$Duration_block_1))
   data$Duration_block_2 <- as.numeric(gsub(",", ".", data$Duration_block_2))
   data$Duration_block_3 <- as.numeric(gsub(",", ".", data$Duration_block_3))
