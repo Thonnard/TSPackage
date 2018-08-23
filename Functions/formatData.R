@@ -41,9 +41,9 @@ formatData <- function(data, group = "all"){
   data$Latency_CorrectLeft <- as.numeric(gsub(",", ".", data$Latency_CorrectLeft))
   data$Latency_CorrectRight <- as.numeric(gsub(",", ".", data$Latency_CorrectRight))
   data$Latency_RewardCollection <- as.numeric(gsub(",", ".", data$Latency_RewardCollection))
-  data$Duration_block_1 <- as.numeric(gsub(",", ".", data$Duration_block_1))
-  data$Duration_block_2 <- as.numeric(gsub(",", ".", data$Duration_block_2))
-  data$Duration_block_3 <- as.numeric(gsub(",", ".", data$Duration_block_3))
+  data$Duration_block_1 <- as.numeric(gsub(",", ".", data$Duration_block_1))  # Amount of time needed to finish 10 trials.
+  data$Duration_block_2 <- as.numeric(gsub(",", ".", data$Duration_block_2))  # Amount of time needed to finish the next 10 trials.
+  data$Duration_block_3 <- as.numeric(gsub(",", ".", data$Duration_block_3))  # ...
   data$CorrectionTrials_block_1 <- as.numeric(data$CorrectionTrials_block_1)
   data$CorrectionTrials_block_2 <- as.numeric(data$CorrectionTrials_block_2)
   data$CorrectionTrials_block_3 <- as.numeric(data$CorrectionTrials_block_3)
@@ -61,11 +61,6 @@ formatData <- function(data, group = "all"){
       # sessions
       data$Session <- sequence(rle(as.character(data$Animal))$lengths)
   
-      # log transformation reaction time data
-      logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
-                    "Latency_RewardCollection")
-      data[paste("Log", logs, sep="_")] <- log(data[logs])
-  
       #correct trials per session
       data <- transform(data, CorrectTrials = Trials*(PercCorrect)/100)
       data$CorrectTrials <- round(data$CorrectTrials)
@@ -75,6 +70,12 @@ formatData <- function(data, group = "all"){
   
       #perseveration index (e.g., Brigman, et al., 2008; Piiponniemi, et al., 2017)
       data <- transform(data, PerseverationIndex = CorrectionTrials/(IncorrectTrials))
+      #data[c("PerseverationIndex")][is.na(data[c("PerseverationIndex")])] <- 0  #replaces "NA" with 0. Not sure if legit.
+  
+      # log transformation reaction time data
+      logs <- c("Latency_Correct", "Latency_Incorrect", "Latency_CorrectLeft", "Latency_CorrectRight", 
+                "Latency_RewardCollection")
+      data[paste("Log", logs, sep="_")] <- log(data[logs])
 
   # select groups (optional)
   if (group != "all") {
