@@ -20,7 +20,7 @@
     <column title="Correct Reward Collection" alias="Latency_CorrectRewardCollection" aggregate="Mean" />
     <column title="10 Trial Block - Trials" alias="Duration_10block" aggregate="Detail" />
     <column title="10 Trial Block - Correct Trial" alias="CorrectTrials_10block" aggregate="Detail" />
-    <column title="10 Trial Block - Correct Percent" alias="PercCorrect_10block" aggregate="Detail" />
+    <column title="10 Trial Block - Block Percent Correct" alias="PercCorrect_10block" aggregate="Detail" />
     <column title="10 Trial Block - Correction Trials" alias="CorrectionTrials_10block" aggregate="Detail" />
   </columns>
   <analysis-set>PD Analysis</analysis-set>
