@@ -94,6 +94,7 @@ formatData <- function(data, group = "all"){
   # return
   dir <- getwd()
   message <- paste("Output file saved in: ", dir, sep="")
-  list <- list("File" = message, "Animals per group" = table)
+  count <- length(a)
+  list <- list("File" = message,  " Number of groups" = count, "Animals per group" = table)
   return(list)  
 }
