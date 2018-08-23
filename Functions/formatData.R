@@ -84,17 +84,28 @@ formatData <- function(data, group = "all"){
   
   # create return table
   a <- unique(data$Group)
-  N <- vector(length = 0)
-  for(i in a){
-    temp <- data[data[,"Group"] == i,]
-    N[i] <- length(unique(temp$Animal))
-    }
-  table <- as.data.frame(N)
+  if(!is.na(a[1])) {
+   N <- vector(length = 0)
+    for(i in a){
+      temp <- data[data[,"Group"] == i,]
+      N[i] <- length(unique(temp$Animal))
+       }
+    table <- as.data.frame(N)
+    } 
+  else {
+    say <- c("Data set contains no group information.")
+  }
   
   # return
   dir <- getwd()
   message <- paste("Output file ('data.csv') saved in: ", dir, sep="")
   count <- length(a)
   list <- list("File" = message,  " Number of groups" = count, "Animals per group" = table)
+  if(!is.na(a[1])) {
   return(list)  
+  }
+  else {
+    list2 <- list("File" = message, "Groups" = say)
+    return(list2)
+  }
 }
