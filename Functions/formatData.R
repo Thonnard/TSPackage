@@ -1,3 +1,14 @@
+# Description
+# formatData returns...
+#
+# Parameters
+# data, requires csv dataset containing 29 columns non-randomly ordered. This dataset can be acquired using this ABET output file: TSPackage/GetOutput/PD_RV_Analysis.abetRpt 
+# group, optional, default includes all groups
+#
+# Examples
+# formatData("mydata.csv")
+# formatData(data="mydata.csv", group=c("controls", "drug1", "drug3"))
+#
 # TODO
 # check variable type for Sessions
 
@@ -55,10 +66,17 @@ formatData <- function(data, group = "all"){
       data[paste("Log", logs, sep="_")] <- log(data[logs])
   # data$Perseversation <-
 
-  # select groups
-  
-  # remove NAs or give warning
+  # select groups (optional)
+  if (group != "all") {
+    data <- data[data[, "Group"] == group,]
+  }
   
   # save data
   write.csv(data, "data.csv", row.names=FALSE)
+  
+  # create return table
+  table <- 
+  
+  # return
+  return(table)  
 }
