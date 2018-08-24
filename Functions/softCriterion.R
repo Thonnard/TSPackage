@@ -13,7 +13,8 @@
 # score: score needed to reach criterion, default = 80
 #
 # Example
-# softCriterion(dv="Scooore",session="Numero", id="Beeste", group="Gang", data=data)
+# softCriterion(dv="Scooore", session="Numero", id="Beeste", group="Gang", data=data)
+# softCriterion(dv="PercCorrect", session="Session", id="Animal", data=data)
 
 softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 80) {
   # create data frame
