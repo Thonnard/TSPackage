@@ -1,5 +1,5 @@
 # Description
-# Using the Descriptives.R function will provide the user with summary statistics by group of a specified variable derived
+# Using the descriptives.R function will provide the user with summary statistics by group of a specified variable derived
 # from a dataset. It will return an output and write a "[var_name]Descriptives.csv" file in the current directory.
 # 
 # Parameters
@@ -12,7 +12,7 @@
 # Descriptives(data = "data.csv", var_name = "latency")
 # Descriptives(data = "data.csv", var_name = "latency", group = c("control", "drug3"))
 
-Descriptives <- function (data, var_name, group = "all") {
+descriptives <- function (data, var_name, group = "all") {
   
   # select groups (optional)
   if (group[1] != "all") {
