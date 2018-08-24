@@ -4,63 +4,64 @@
 # When criterion was never reached, criterion value will be "NA" 
 #
 # Parameters
-# data: csv format
+# dv: dependent varialbe (e.g. percentage correct)
+# session: session information for every subject
+# id: animals
+# group: groups
+# data: data frame (long format) containing at least one dependent variable, session, group information and id 
 # crit: number of successive sessions to reach criterion, default = 2
 # score: % correct needed to reach criterion, default = 80
 #
 # Example
-# softCriterion("data.csv")
-#
-# TODO
-# add optional dv parameter
+# softCriterion(dv="Scooore",session="Numero", id="Beeste", group="Gang", data=data)
 
-softCriterion <- function(data, crit = 2, score = 80) {
-  # read data
-  data <- read.csv(data, header = TRUE, sep = ",")
+softCriterion <- function(dv, session, id, group, data, crit = 2, score = 80) {
+  # create data frame
+  data <- as.data.frame(data)
   
-  # attach
-  attach(data)
+  # create readable variables from parameter input
+  depvar <- eval(parse(text = paste("data$", dv, sep="")))
+  animal <- eval(parse(text = paste("data$", id, sep="")))
 
   # calculate success
-  data$Success <- ifelse(PercCorrect >= score, "TRUE", "FALSE")
+  data$Success <- ifelse(depvar >= score, "TRUE", "FALSE")
   
-  # variables for output
-  list <- unique(Animal)
-  id <- vector(length = 0)
-  group <- vector(length = 0)
+  # variables for for loop and output
+  list <- unique(animal)
+  subject <- vector(length = 0)
+  gr <- vector(length = 0)
   criterion <- vector(length = 0)
   
-  # for loop for every subject
+  # for loop for every subject to isolate critical session number
   for(i in list) {
     # select data for every animal
-    dataID <- data[data[, "Animal"] == i,]
+    dataID <- data[data[, id] == i,]
     
     # order data correctly
-    dataID <- dataID[with(dataID, order(Session)), ]
-    
+    dataID <- dataID[with(dataID, order(eval(parse(text = session)))), ]
+
     # determine sequence | this needs to be in this for loop to avoid mistakes!
     dataID$seq <- sequence(rle(as.character(dataID$Success))$lengths)
     
     # isolate critical session number
+    colnames(dataID)[colnames(dataID) == session] <- "Session"  # chaning name to parameter input so session information can be extracted
     criterion[i] <- dataID[dataID[, "Success"] == "TRUE" & dataID[, "seq"] == crit,]$Session[1]
-    
+
     # ID
-    id[i] <- i
+    subject[i] <- i
     
     # Group
-    group[i] <- as.character(dataID$Group[1])
+    colnames(dataID)[colnames(dataID) == group] <- "Group"  # chaning name to parameter input so group information can be extracted
+    gr[i] <- as.character(dataID$Group[1])
   }
   
   # create output table
-  output <- data.frame(id, group, criterion)
+  output <- data.frame(subject, gr, criterion)
   rownames(output) <- c()
   
   # write table to csv file
   write.csv(output, file = "softCriterionOutput.csv")
-  
-  # detach
-  detach(data)
-  
+
   # return table in console
   return(output)
 }
