@@ -12,7 +12,7 @@
 # crit: number of successive sessions to reach criterion, default = 2
 # score: score needed to reach criterion, default = 80
 #
-# Example
+# Examples
 # softCriterion(dv="Scooore", session="Numero", id="Beeste", group="Gang", data=data)
 # softCriterion(dv="PercCorrect", session="Session", id="Animal", data=data)
 
