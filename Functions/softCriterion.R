@@ -7,15 +7,15 @@
 # dv: dependent varialbe (e.g. percentage correct)
 # session: session information for every subject
 # id: animals
-# group: groups
-# data: data frame (long format) containing at least one dependent variable, session, group information and id 
+# group: group information (optional)
+# data: data frame (long format) containing at least one dependent variable, session, id and group information (optional) 
 # crit: number of successive sessions to reach criterion, default = 2
 # score: % correct needed to reach criterion, default = 80
 #
 # Example
 # softCriterion(dv="Scooore",session="Numero", id="Beeste", group="Gang", data=data)
 
-softCriterion <- function(dv, session, id, group, data, crit = 2, score = 80) {
+softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 80) {
   # create data frame
   data <- as.data.frame(data)
   
@@ -51,12 +51,19 @@ softCriterion <- function(dv, session, id, group, data, crit = 2, score = 80) {
     subject[i] <- i
     
     # Group
+    if(group!="FOO"){
     colnames(dataID)[colnames(dataID) == group] <- "Group"  # chaning name to parameter input so group information can be extracted
     gr[i] <- as.character(dataID$Group[1])
+    }
   }
   
   # create output table
-  output <- data.frame(subject, gr, criterion)
+  if(group=="FOO") {
+  output <- data.frame(subject, criterion)
+  }
+  else {
+    output <- data.frame(subject, gr, criterion)
+  }
   rownames(output) <- c()
   
   # write table to csv file
