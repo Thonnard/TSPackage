@@ -49,3 +49,5 @@ Workflow
 
 3.  Statistical Report.
 - R Markdown
+
+(4.) function that checks performance during shaping (combining all shaping data + analysis) 
