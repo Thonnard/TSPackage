@@ -10,7 +10,7 @@
 # group: group information (optional)
 # data: data frame (long format) containing at least one dependent variable, session, id and group information (optional) 
 # crit: number of successive sessions to reach criterion, default = 2
-# score: % correct needed to reach criterion, default = 80
+# score: score needed to reach criterion, default = 80
 #
 # Example
 # softCriterion(dv="Scooore",session="Numero", id="Beeste", group="Gang", data=data)
