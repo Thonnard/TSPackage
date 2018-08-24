@@ -8,9 +8,9 @@
 # group: optional, default includes all groups
 #
 # Example
-# Descriptives(data, "latency")
-# Descriptives(data = "data.csv", var_name = "latency")
-# Descriptives(data = "data.csv", var_name = "latency", group = c("control", "drug3"))
+# descriptives(data, "latency")
+# descriptives(data = "data.csv", var_name = "latency")
+# descriptives(data = "data.csv", var_name = "latency", group = c("control", "drug3"))
 
 descriptives <- function (data, var_name, group = "all") {
   
