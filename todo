@@ -26,7 +26,7 @@ Workflow
     To do: Add Q1, Q3, and IQR in table.
 
 -	RMAnova function.
-  Parameters: DV, Group, Time, Data.
+  Parameters: DV, Group, Time, Data, formula (include option for cofactor, eg shaping)
   Perform Mixed-Effects model.
   Extract formal test statistics for assumptions: table and plots.
   Extract formal test statistics for RMAnova analysis: table and plots.
