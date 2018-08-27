@@ -45,7 +45,7 @@ softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 
     dataID$seq <- sequence(rle(as.character(dataID$Success))$lengths)
     
     # isolate critical session number
-    colnames(dataID)[colnames(dataID) == session] <- "Session"  # changing name to parameter input so session information can be extracted
+    colnames(dataID)[colnames(dataID) == session] <- "Session"  # changing name with parameter input so session information can be extracted
     criterion[i] <- dataID[dataID[, "Success"] == "TRUE" & dataID[, "seq"] == crit,]$Session[1]
 
     # ID
@@ -53,7 +53,7 @@ softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 
     
     # Group
     if(group!="FOO"){
-    colnames(dataID)[colnames(dataID) == group] <- "Group"  # changing name to parameter input so group information can be extracted
+    colnames(dataID)[colnames(dataID) == group] <- "Group"  # changing name with parameter input so group information can be extracted
     gr[i] <- as.character(dataID$Group[1])
     }
   }
