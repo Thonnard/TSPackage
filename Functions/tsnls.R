@@ -49,14 +49,14 @@ tsnls <- function(dv, session, id, group, includeGroups="all", formula="FOO", da
     dataID <- data[data[,id] == i,]
     # subject
     subject[i] <- (i) 
-    # extract group information
+    # group information
     gr[i] <- as.character(dataID$Group[1])
     # initial value and max
     init[i] <- as.numeric(dataID[1,"PercCorrect"])
     max[i] <- max(dataID[,"PercCorrect"])
     # non-linear regression model
     m <-nls(PercCorrect ~ max[i] - (max[i]-init[i])*e^(-lambda*Session/100), data = dataID, start = start)
-    # extract lambda
+    # lambda
     lam[i] <- summary(m)$coefficients[1]
     # goodness of fit
     gof[i] <- cor(dataID$PercCorrect, predict(m))
