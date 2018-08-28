@@ -11,7 +11,6 @@
 
 formatData <- function(data, group="all"){
   # read data
-  #data <- read.csv(data, header = TRUE, sep = ",")
   require(data.table)
   data <- fread(data)
   data <- as.data.frame(data)
