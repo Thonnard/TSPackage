@@ -15,7 +15,7 @@
 # TO DO: Define Boolean TRUE/FALSE argument in function for group, with default = TRUE. 
 #        (E.g., if group = TRUE, report summary statistics by group. If group = FALSE, report general summary statistics.)
 
-Descriptives <- function (data = data, var_name, group) {
+Descriptives <- function (data = data, var_name, group="all") {
   # create data frame
   data <- as.data.frame(data)
   
