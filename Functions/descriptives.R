@@ -10,7 +10,7 @@
 # Example
 # descriptives(data, "latency", group = "all")
 # descriptives(data = data, var_name = "latency", group = "all")
-# descriptives(data = data.csv, var_name = "latency", group = c("control", "drug3"))
+# descriptives(data = data, var_name = "latency", group = c("control", "drug3"))
 #
 # TO DO: Define Boolean TRUE/FALSE argument in function for group, with default = TRUE. 
 #        (E.g., if group = TRUE, report summary statistics by group. If group = FALSE, report general summary statistics.)
