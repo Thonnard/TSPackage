@@ -8,11 +8,16 @@
 # group: optional, default includes all groups
 #
 # Example
-# descriptives(data, "latency")
-# descriptives(data = "data.csv", var_name = "latency")
-# descriptives(data = "data.csv", var_name = "latency", group = c("control", "drug3"))
+# descriptives(data, "latency", group = "all")
+# descriptives(data = data, var_name = "latency", group = "all")
+# descriptives(data = data.csv, var_name = "latency", group = c("control", "drug3"))
+#
+# TO DO: Define Boolean TRUE/FALSE argument in function for group, with default = TRUE. 
+#        (E.g., if group = TRUE, report summary statistics by group. If group = FALSE, report general summary statistics.)
 
-descriptives <- function (data, var_name, group = "all") {
+Descriptives <- function (data = data, var_name, group) {
+  # create data frame
+  data <- as.data.frame(data)
   
   # select groups (optional)
   if (group[1] != "all") {
@@ -20,7 +25,17 @@ descriptives <- function (data, var_name, group = "all") {
   }
   
   # core function
-  my.summary <- function(x) c(N = length(x), Mean = mean(x), Median = median(x), SD = sd(x), SEM = sd(x)/sqrt(length(x)), Min = min(x), Max = max(x), quantile(x, .25), IQR = IQR (x), quantile(x, .75))
+  my.summary <- function(x) c(N = length(x), 
+                              Missing = sum(is.na(x), na.rm = TRUE),
+                              Mean = mean(x, na.rm = TRUE), 
+                              Median = median(x, na.rm = TRUE), 
+                              SD = sd(x, na.rm = TRUE), 
+                              SEM = sd((x)/sqrt(length(x)), na.rm = TRUE), 
+                              Min = min(x, na.rm = TRUE), 
+                              Max = max(x, na.rm = TRUE), 
+                              quantile(x, .25, na.rm = TRUE), 
+                              IQR = IQR (x, na.rm = TRUE), 
+                              quantile(x, .75, na.rm = TRUE))
   
   # execute core function on var_name
   do.call(rbind, tapply(data[,var_name], data$Group, my.summary))
