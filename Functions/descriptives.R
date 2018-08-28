@@ -12,8 +12,8 @@
 # descriptives(data = data, var_name = "latency", group = "all")
 # descriptives(data = data, var_name = "latency", group = c("control", "drug3"))
 #
-# TO DO: Define Boolean TRUE/FALSE argument in function for group, with default = TRUE. 
-#        (E.g., if group = TRUE, report summary statistics by group. If group = FALSE, report general summary statistics.)
+# TO DO: Insert possibility for flexible column names.
+#        Add plots to illustrate summary statistics by group.
 
 Descriptives <- function (data = data, var_name, group="all") {
   # create data frame
