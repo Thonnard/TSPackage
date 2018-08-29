@@ -43,7 +43,7 @@ Workflow
   Insert anova function. Which package?! Car, Base R, Afex, …
   Insert line plot.
 
-- Non-parametric 'equivalent' to ANOVA?
+- Non-parametric: Aligned rank transform (wobbrock)
 
 - Add tests for trial blocks? E.g., Intra-trial learning? Compare blocks of Session #1 between and within groups?
 
