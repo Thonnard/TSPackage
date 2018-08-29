@@ -153,7 +153,7 @@ tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10
   } else {
     for(i in grouplist) {
       datasub <- pd[pd[, "Group"] == i,]
-      filename <- paste(i, ".", graph, sep="")
+      filename2 <- paste(i, ".", graph, sep="")
       if (graph == "tiff") {
         tiff(filename2, width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
       }
