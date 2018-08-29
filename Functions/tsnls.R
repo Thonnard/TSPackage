@@ -10,7 +10,7 @@
 # Examples
 # tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", includeGroups="all", data, lambda=10, graph="jpeg", res=600)
 
-tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10, graph="tiff", res=600){
+tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10, graph="jpeg", res=600){
   # create data frame
   data <- as.data.frame(data)
   
