@@ -15,13 +15,13 @@
 # TO DO: Insert possibility for flexible column names.
 #        Add plots to illustrate summary statistics by group.
 
-Descriptives <- function (data = data, var_name, group="all") {
+descriptives <- function (data, var_name, groups="all") {
   # create data frame
   data <- as.data.frame(data)
   
   # select groups (optional)
-  if (group[1] != "all") {
-    data <- data[data[, "Group"] %in% group,]
+  if (groups[1] != "all") {
+    data <- data[data[, "Group"] %in% groups,]
   }
   
   # core function
