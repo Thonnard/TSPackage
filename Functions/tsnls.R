@@ -2,6 +2,7 @@
 # todo
 # test includeGroups
 # create summary graph
+# create summary for output
 #
 # Parameters
 # graph: output type, default: jpeg, options: tiff, svg, png, jpeg, eps, pdf
