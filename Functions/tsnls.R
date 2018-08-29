@@ -3,6 +3,8 @@
 # test includeGroups
 # create summary graph
 # create summary for output
+# adapt graphical parameters in flexible way (eg xlim)
+# or different approach: calculate pred values create data frame with PercCorrct, Pred, Session, Group for every animal and then create graphs based on that data.frame
 #
 # Parameters
 # graph: output type, default: jpeg, options: tiff, svg, png, jpeg, eps, pdf
@@ -10,7 +12,7 @@
 # Examples
 # tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", includeGroups="all", data, lambda=10, graph="jpeg", res=600)
 
-tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10, graph="jpeg", res=600){
+tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10, graph="jepg", res=600){
   # create data frame
   data <- as.data.frame(data)
   
@@ -173,6 +175,20 @@ tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10
   # create data frame with predicted values
   pd <- do.call(rbind,preddatalist)
   rownames(pd) <- c()
+  
+  # create data frame for summary graph
+  sum <- data.frame(Pred = with(pd, tapply(Predicted, if(is.na(unique(Group)) == T || unique(Group) < 2){Session} else list(Session, Group), mean)))
+  sum$Session <- c(1:nrow(sum))
+  
+  # summary graph
+  jpeg("summary.jpeg", width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
+  plotsum <- 
+    plot(sum$Session,sum$Pred, pch=16, xlab="", ylab="", xlim=c(0,20), ylim=c(0,100))
+  lines(sum$Session,sum$Pred,lty=1,col="red",lwd=2)
+  abline(h=50, lty=2)
+  abline(h=80, lty=2)
+  dev.off()
+
   
   # output
   output <- data.frame(subject, gr, lam, gof, init, max)
