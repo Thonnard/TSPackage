@@ -1,14 +1,19 @@
 # version 2
 # todo
+# test includeGroups
+# create summary graph
+# create summary for output
 # adapt graphical parameters in flexible way (eg xlim)
+# add n per group in summary
 #
 # Parameters
-# graph: output type, default: jpeg, options: tiff, svg, png, jpeg, eps, pdf
+# graph: output type passed to ggplot device, default: jpeg
+# adjust: correction method for post hoc comparisons passed to emmeans, default: tukey
 #
 # Examples
-# tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", res=600)
+# tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", res=600, adjust="bonferroni")
 
-tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=600){
+tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=600, adjust="tukey"){
   # dependencies
   require(ggplot2)
   require(afex)
@@ -175,7 +180,7 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
     contrasts <- c("No group information available")
   } else {
     m <- aov_ez(id = "Animal", dv = "Lambda", data = output, between = "Group")
-    contrasts <- emmeans(m, pairwise ~ Group)
+    contrasts <- emmeans(m, pairwise ~ Group, , adjust=adjust)
   }
   
   # return table in console
