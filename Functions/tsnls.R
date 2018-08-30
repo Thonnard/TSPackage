@@ -1,10 +1,6 @@
 # version 2
 # todo
-# test includeGroups
-# create summary graph
-# create summary for output
 # adapt graphical parameters in flexible way (eg xlim)
-# add n per group in summary
 #
 # Parameters
 # graph: output type, default: jpeg, options: tiff, svg, png, jpeg, eps, pdf
