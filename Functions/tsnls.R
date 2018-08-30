@@ -1,5 +1,6 @@
 # version 2
 # todo
+# test assumptions / correct for deviations
 # adapt graphical parameters in flexible way (eg xlim)
 # optimize size of graphs
 #
