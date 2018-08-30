@@ -1,10 +1,8 @@
 # version 2
 # todo
-# test includeGroups
-# create summary graph
-# create summary for output
+# test graph device for different types
 # adapt graphical parameters in flexible way (eg xlim)
-# add n per group in summary
+# optimize size of graphs
 #
 # Parameters
 # graph: output type passed to ggplot device, default: jpeg
