@@ -120,10 +120,7 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
   # create data frame with predicted values
   pd <- do.call(rbind,preddatalist)
   rownames(pd) <- c()
-  
-  # vector for N per group
-  N <- vector(length = 0)
-  
+
   # layout graph
   grouplist <- unique(pd$Group)
   if (any(is.na(unique(pd$Group)))==T) {
@@ -133,7 +130,6 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
   } else {
     for(i in grouplist) {
       datasub <- pd[pd[, "Group"] == i,]
-      N[i] <- length(unique(datasub$Animal))
       filename3 <- paste(i, ".", graph, sep="")
       gr_layout <- ggplot(datasub, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
       ggsave(filename = filename3, plot = gr_layout)
@@ -160,9 +156,10 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
   colnames(output) <- c("Animal", "Group", "Lambda", "Goodness of fit", "Initial value", "Maximum value")
   output_sum <- output
   if (any(is.na(unique(output_sum$Group)))==T) output_sum$Group <- "No_group_information"
+  tempdf <- aggregate(Animal ~ Group, data = output, length) # determine N per group
   output_sum$Animal <- NULL
   output_sum <- aggregate(.~Group, output_sum, FUN = function(x) mean(as.numeric(as.character(x))))
-  output_sum$N <- N
+  output_sum$N <- tempdf$Animal
   output_sum <- output_sum[,c(1,6,2:5)]
   
   # write output and predicted values to file
@@ -178,10 +175,10 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
     contrasts <- c("No group information available")
   } else {
     m <- aov_ez(id = "Animal", dv = "Lambda", data = output, between = "Group")
-    contrasts <- emmeans(m, pairwise ~ Group, , adjust=adjust)
+    posthoc <- emmeans(m, pairwise ~ Group, , adjust=adjust)
   }
   
   # return table in console
-  outputlist <- list("Nonlinear Least Squares model" = output_sum, "Anova"= m, "Post hoc comparisons" = contrasts)
+  outputlist <- list("Nonlinear Least Squares model" = output_sum, "Anova"= m, "Post hoc comparisons" = posthoc)
   return(outputlist)
 }
