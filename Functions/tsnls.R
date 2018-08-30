@@ -1,6 +1,5 @@
 # version 2
 # todo
-# test graph device for different types
 # adapt graphical parameters in flexible way (eg xlim)
 # optimize size of graphs
 #
@@ -8,15 +7,21 @@
 # graph: output type passed to ggplot device, default: jpeg
 # adjust: correction method for post hoc comparisons passed to emmeans, default: tukey
 #
+# Note for graphical output parameters:
+# height and width specify the final(!) output dimensions (in your paper). DPI specifies the quality. The higher, the more pixels in the final
+# graph. cf. https://www.elsevier.com/authors/author-schemas/artwork-and-media-instructions/artwork-sizing
+# graph: output format, jpeg (or jpg), tiff, eps, png, svg or pdf
+#
 # Examples
-# tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", res=600, adjust="bonferroni")
+# tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", dpi=600, adjust="bonferroni")
 
-tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=600, adjust="tukey"){
+tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=600, adjust="tukey"){
   # dependencies
-  require(ggplot2)
-  require(afex)
-  require(emmeans)
+  require(ggplot2) # graphs
+  require(afex) # statistical analyses
+  require(emmeans) # post hoc comparisons and contrast testing
   require(xlsx) # depends on java!
+  require(svglite) # used by ggplot to save in svg format
   
   # create data frame
   data <- as.data.frame(data)
@@ -83,16 +88,16 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
     # save plots (one plot per animal)
     filename <- paste(i, ".", graph, sep="")
     if (graph == "tiff") {
-      tiff(filename, width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
+      tiff(filename, width = 7.5, height = 7.5, unit = "in", res=dpi)
     }
     if (graph == "svg") {
-      svg(filename, width = 7.5, height = ceiling(length(list)/4)*2)
+      svg(filename, width = 7.5, height = 7.5)
     }
     if (graph == "png") {
-      png(filename, width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
+      png(filename, width = 7.5, height = 7.5, unit = "in", res=dpi)
     }
     if (graph == "jpeg" | graph == "jpg") {
-      jpeg(filename, width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
+      jpeg(filename, width = 7.5, height = 7.5, unit = "in", res=dpi)
     }
     if (graph == "pdf") {
       pdf(filename)
@@ -126,13 +131,13 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
   if (any(is.na(unique(pd$Group)))==T) {
     filename2 <- paste("layout.", graph, sep="")
     gr_layout <- ggplot(pd, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-    ggsave(filename = filename2, plot = gr_layout)
+    ggsave(filename = filename2, plot = gr_layout, height = (length(unique(pd$Animal))/4)*4.75, width = 19 , units = "cm", dpi = dpi, device = graph)
   } else {
     for(i in grouplist) {
       datasub <- pd[pd[, "Group"] == i,]
       filename3 <- paste(i, ".", graph, sep="")
       gr_layout <- ggplot(datasub, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-      ggsave(filename = filename3, plot = gr_layout)
+      ggsave(filename = filename3, plot = gr_layout, height = (length(unique(datasub$Animal))/4)*4.75, width = 19 , units = "cm", dpi = dpi, device = graph)
     }
   }
   
@@ -172,7 +177,7 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=6
   # statistical analysis
   if (any(is.na(unique(output$Group)))==T || length(unique(output$Group)) < 2) {
     m <- c("No group information available")
-    contrasts <- c("No group information available")
+    posthoc <- c("No group information available")
   } else {
     m <- aov_ez(id = "Animal", dv = "Lambda", data = output, between = "Group")
     posthoc <- emmeans(m, pairwise ~ Group, , adjust=adjust)
