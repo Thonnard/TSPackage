@@ -4,15 +4,15 @@
 # create summary graph
 # create summary for output
 # adapt graphical parameters in flexible way (eg xlim)
-# or different approach: calculate pred values create data frame with PercCorrct, Pred, Session, Group for every animal and then create graphs based on that data.frame
+# add n per group in summary
 #
 # Parameters
 # graph: output type, default: jpeg, options: tiff, svg, png, jpeg, eps, pdf
 #
 # Examples
-# tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", includeGroups="all", data, lambda=10, graph="jpeg", res=600)
+# tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", res=600)
 
-tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10, graph="jepg", res=600){
+tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jepg", res=600){
   # dependencies
   require(ggplot2)
   require(afex)
@@ -21,7 +21,7 @@ tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10
   
   # create data frame
   data <- as.data.frame(data)
-  
+
   # create readable variables from parameter input
   depvar <- eval(parse(text = paste("data$", dv, sep="")))
   ses <- eval(parse(text = paste("data$", session, sep="")))
@@ -29,12 +29,7 @@ tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10
   
   # set e
   e <- exp(1)
-  
-  # select groups based on parameter
-  if (includeGroups != "all") {
-    data <- data[data[, group] == includeGroups,]
-  }
-  
+
   # changing group column name with parameter input so group information can be extracted
   colnames(data)[colnames(data) == group] <- "Group"
   # changing dep var column name with parameter input so init, max and goodness of fit can be calculated
@@ -62,6 +57,7 @@ tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10
   setwd("Plots")
   
   # run analysis for every animal in list
+  writeLines("Please wait...")
   for(i in list){
     # subset data
     dataID <- data[data[,id] == i,]
@@ -126,106 +122,49 @@ tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10
   pd <- do.call(rbind,preddatalist)
   rownames(pd) <- c()
   
+  # vector for N per group
+  N <- vector(length = 0)
+  
   # layout graph
   grouplist <- unique(pd$Group)
-  if (is.na(unique(pd$Group))==T) {
-    if (graph == "tiff") {
-      tiff("layout.tiff", width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-    }
-    if (graph == "svg") {
-      svg("layout.svg", width = 7.5, height = ceiling(length(list)/4)*2)
-    }
-    if (graph == "png") {
-      png("layout.png", width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-    }
-    if (graph == "jpeg" | graph == "jpg") {
-      jpeg("layout.jpeg", width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-    }
-    if (graph == "pdf") {
-      pdf("layout.pdf")
-    }
-    if (graph == "eps") {
-      setEPS()
-      postscript("layout.eps")
-    }
-    ggplot(pd, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-    dev.off()
+  if (any(is.na(unique(pd$Group)))==T) {
+    filename2 <- paste("layout.", graph, sep="")
+    gr_layout <- ggplot(pd, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    ggsave(filename = filename2, plot = gr_layout)
   } else {
     for(i in grouplist) {
       datasub <- pd[pd[, "Group"] == i,]
-      filename2 <- paste(i, ".", graph, sep="")
-      if (graph == "tiff") {
-        tiff(filename2, width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-      }
-      if (graph == "svg") {
-        svg(filename2, width = 7.5, height = ceiling(length(list)/4)*2)
-      }
-      if (graph == "png") {
-        png(filename2, width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-      }
-      if (graph == "jpeg" | graph == "jpg") {
-        jpeg(filename2, width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-      }
-      if (graph == "pdf") {
-        pdf(filename2)
-      }
-      if (graph == "eps") {
-        setEPS()
-        postscript(filename2)
-      }
-      print(ggplot(datasub, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()))
-      dev.off()
+      N[i] <- length(unique(datasub$Animal))
+      filename3 <- paste(i, ".", graph, sep="")
+      gr_layout <- ggplot(datasub, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+      ggsave(filename = filename3, plot = gr_layout)
     }
   }
   
   # summary graph
-  if (graph == "tiff") {
-    tiff("tsnls_sum.tiff", width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-  }
-  if (graph == "svg") {
-    svg("tsnls_sum.svg", width = 7.5, height = ceiling(length(list)/4)*2)
-  }
-  if (graph == "png") {
-    png("tsnls_sum.png", width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-  }
-  if (graph == "jpeg" | graph == "jpg") {
-    jpeg("tsnls_sum.jpeg", width = 7.5, height = ceiling(length(list)/4)*2, unit = "in", res=res)
-  }
-  if (graph == "pdf") {
-    pdf("tsnls_sum.pdf")
-  }
-  if (graph == "eps") {
-    setEPS()
-    postscript("tsnls_sum.eps")
-  }
-  if (is.na(unique(pd$Group))==T) {
+  filename4 <- paste("summary.", graph, sep="")
+  if (any(is.na(unique(pd$Group)))==T) {
     sum <- aggregate(pd$Predicted, list(pd$Session), mean)
     colnames(sum) <- c("Session", "Predicted")
-    ggplot(data=sum, aes(x=Session, y=Predicted)) + geom_line() + geom_point() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted)) + geom_line() + geom_point() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    ggsave(filename = filename4, plot = gr_sum)
   } else {
     sum <- aggregate(pd$Predicted, list(pd$Session, pd$Group), mean)
     colnames(sum) <- c("Session", "Group", "Predicted")
-    ggplot(data=sum, aes(x=Session, y=Predicted, group=Group)) + geom_line() + geom_point() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted, group=Group)) + geom_line() + geom_point() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    ggsave(filename = filename4, plot = gr_sum)
   }
-  dev.off()
-  
+
   # output
   output <- data.frame(subject, gr, lam, gof, init, max)
   rownames(output) <- c()
   colnames(output) <- c("Animal", "Group", "Lambda", "Goodness of fit", "Initial value", "Maximum value")
   output_sum <- output
-  if (is.na(unique(output_sum$Group))==T) output_sum$Group <- "No_group_information"
+  if (any(is.na(unique(output_sum$Group)))==T) output_sum$Group <- "No_group_information"
   output_sum$Animal <- NULL
   output_sum <- aggregate(.~Group, output_sum, FUN = function(x) mean(as.numeric(as.character(x))))
-  
-  # statistical analysis
-  if (is.na(unique(output$Group))==T || length(unique(output$Group)) < 2) {
-    m <- c("No group information available")
-    contrasts <- c("No group information available")
-  } else {
-    m <- summary(aov_ez(id = "Animal", dv = "Lambda", data = output, between = "Group"))
-    contrasts <- emmeans(m, pairwise ~ Group)
-  }
+  output_sum$N <- N
+  output_sum <- output_sum[,c(1,6,2:5)]
   
   # write output and predicted values to file
   setwd(wd)
@@ -233,6 +172,15 @@ tsnls <- function(dv, session, id, group, includeGroups="all", data, lambda = 10
   write.csv(pd, file = "tsnls_predicted.csv")
   write.xlsx(output, "tsnls.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
   write.xlsx(pd, "tsnls_predicted.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
+  
+  # statistical analysis
+  if (any(is.na(unique(output$Group)))==T || length(unique(output$Group)) < 2) {
+    m <- c("No group information available")
+    contrasts <- c("No group information available")
+  } else {
+    m <- aov_ez(id = "Animal", dv = "Lambda", data = output, between = "Group")
+    contrasts <- emmeans(m, pairwise ~ Group)
+  }
   
   # return table in console
   outputlist <- list("Nonlinear Least Squares model" = output_sum, "Anova"= m, "Post hoc comparisons" = contrasts)
