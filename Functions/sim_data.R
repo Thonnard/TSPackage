@@ -9,7 +9,7 @@
 # Graph with scores (points) created by adding variation to the fitted model, and predicted values from the original model (lines)
 #
 # Parameters
-# n1/n2: subjects per group
+# n1/n2: subjects per group (bigger groups provide more (biologically) valid date (due to lower within group variation))
 # m1/m2: means for lambda
 # sd1/sd2: standard deviations for lambda
 # sessions: number of learning sessions
