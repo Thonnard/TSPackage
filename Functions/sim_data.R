@@ -6,7 +6,7 @@
 # Output
 # Data table with parameter info (lambda, max, ini)
 # Data table with scores and values predicted by model
-# Graph with scores (points) and model predictions (lines)
+# Graph with scores (points) created by adding variation to the fitted model, and predicted values from the original model (lines)
 #
 # Parameters
 # n1/n2: subjects per group
