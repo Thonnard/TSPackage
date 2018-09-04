@@ -16,6 +16,8 @@
 # TO DO: Direct plots to [var_name] folder within wd(). This folder could be used for ANOVA function?
 #        Adjust N to group size instead of overall observations.
 #
+# ERRATUM : Function plots boxplot with name of first observation; no idea why. Needs to be solved.
+#
 descriptives <- function (data, var_name, group, includeGroups = "all") {
   # dependencies
   require(ggplot2) # graphs
