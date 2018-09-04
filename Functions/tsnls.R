@@ -14,9 +14,9 @@
 # graph: output format, jpeg (or jpg), tiff, eps, png, svg or pdf
 #
 # Examples
-# tsnls(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", dpi=600, adjust="bonferroni")
+# non_linear_model(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", dpi=600, adjust="bonferroni")
 
-tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=600, adjust="tukey"){
+nonlinear_model <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=600, adjust="tukey"){
   # dependencies
   require(ggplot2) # graphs
   require(afex) # statistical analyses
@@ -26,7 +26,7 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=6
   
   # create data frame
   data <- as.data.frame(data)
-
+  
   # create readable variables from parameter input
   depvar <- eval(parse(text = paste("data$", dv, sep="")))
   ses <- eval(parse(text = paste("data$", session, sep="")))
@@ -34,7 +34,7 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=6
   
   # set e
   e <- exp(1)
-
+  
   # changing group column name with parameter input so group information can be extracted
   colnames(data)[colnames(data) == group] <- "Group"
   # changing dep var column name with parameter input so init, max and goodness of fit can be calculated
@@ -108,8 +108,7 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=6
       postscript(filename)
     }
     # plot
-    plot <- 
-    plot(dataID$Session,dataID$PercCorrect, pch=16, xlab="", ylab="", xlim=c(0,20), ylim=c(0,100))
+    plot <- plot(dataID$Session,dataID$PercCorrect, pch=16, xlab="", ylab="", xlim=c(0,20), ylim=c(0,100))
     lines(dataID$Session,predict(m),lty=1,col="red",lwd=2)
     lab = paste("Lambda: ", round(lam[i],2))
     lab2 = paste("ID: ", i)
@@ -121,23 +120,46 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=6
     abline(h=80, lty=2)
     # end plot
     dev.off()
+    
+    # ggplot code for individual plots (not functional...yet)
+    #plot <- ggplot(data = dataID, aes(Session, PercCorrect)) + 
+      #geom_point(aes(Session, PercCorrect), size = 1, alpha = 0.5) + 
+      #geom_line(data = preddata, aes(Session, predict(m)), color = "red") + 
+      #geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
+      #geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
+      #theme_bw() + 
+      #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
   }
   
   # create data frame with predicted values
   pd <- do.call(rbind,preddatalist)
   rownames(pd) <- c()
-
+  
   # layout graph
   grouplist <- unique(pd$Group)
   if (any(is.na(unique(pd$Group)))==T) {
     filename2 <- paste("layout.", graph, sep="")
-    gr_layout <- ggplot(pd, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    gr_layout <-  ggplot(pd, aes(Session, PercCorrect), color = "red", linetype = "solid") + 
+                  geom_point(size = 1, alpha = .5) + 
+                  geom_line(aes(Session, Predicted), color = "red", linetype = "solid") +
+                  geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
+                  geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
+                  facet_wrap(~ Animal, ncol=4) + 
+                  theme_bw() + 
+                  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
     ggsave(filename = filename2, plot = gr_layout, height = (length(unique(pd$Animal))/4)*4.75, width = 19 , units = "cm", dpi = dpi, device = graph)
   } else {
     for(i in grouplist) {
       datasub <- pd[pd[, "Group"] == i,]
       filename3 <- paste(i, ".", graph, sep="")
-      gr_layout <- ggplot(datasub, aes(Session, PercCorrect)) + geom_point() + geom_line(aes(Session, Predicted)) + facet_wrap(~ Animal, ncol=4) + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+      gr_layout <-  ggplot(datasub, aes(Session, PercCorrect)) + 
+                    geom_point(size = 1, alpha = .5) + 
+                    geom_line(aes(Session, Predicted), color = "red", linetype = "solid") +
+                    geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
+                    geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
+                    facet_wrap(~ Animal, ncol=4) + 
+                    theme_bw() + 
+                    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
       ggsave(filename = filename3, plot = gr_layout, height = (length(unique(datasub$Animal))/4)*4.75, width = 19 , units = "cm", dpi = dpi, device = graph)
     }
   }
@@ -147,15 +169,23 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=6
   if (any(is.na(unique(pd$Group)))==T) {
     sum <- aggregate(pd$Predicted, list(pd$Session), mean)
     colnames(sum) <- c("Session", "Predicted")
-    gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted)) + geom_line() + geom_point() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted)) + 
+              geom_line() + 
+              geom_point() + 
+              theme_bw() + 
+              theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
     ggsave(filename = filename4, plot = gr_sum)
   } else {
     sum <- aggregate(pd$Predicted, list(pd$Session, pd$Group), mean)
     colnames(sum) <- c("Session", "Group", "Predicted")
-    gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted, group=Group)) + geom_line() + geom_point() + theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted, group=Group)) + 
+              geom_line() + 
+              geom_point() + 
+              theme_bw() + 
+              theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
     ggsave(filename = filename4, plot = gr_sum)
   }
-
+  
   # output
   output <- data.frame(subject, gr, lam, gof, init, max)
   rownames(output) <- c()
@@ -176,12 +206,12 @@ tsnls <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=6
   write.xlsx(pd, "tsnls_predicted.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
   
   # statistical analysis
-  if (any(is.na(unique(output$Group)))==T || length(unique(output$Group)) < 2) {
+  if (any(is.na(unique(output$Group)))==TRUE || length(unique(output$Group)) < 2) {
     m <- c("No group information available")
     posthoc <- c("No group information available")
   } else {
     m <- aov_ez(id = "Animal", dv = "Lambda", data = output, between = "Group")
-    posthoc <- emmeans(m, pairwise ~ Group, , adjust=adjust)
+    posthoc <- emmeans(m, pairwise ~ Group, , adjust = adjust)
   }
   
   # return table in console
