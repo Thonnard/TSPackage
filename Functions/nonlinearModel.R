@@ -14,9 +14,9 @@
 # graph: output format, jpeg (or jpg), tiff, eps, png, svg or pdf
 #
 # Examples
-# non_linear_model(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", dpi=600, adjust="bonferroni")
+# nonlinearModel(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", dpi=600, adjust="bonferroni")
 
-nonlinear_model <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=600, adjust="tukey"){
+nonlinearModel <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=600, adjust="tukey"){
   # dependencies
   require(ggplot2) # graphs
   require(afex) # statistical analyses
