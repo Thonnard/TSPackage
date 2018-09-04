@@ -20,7 +20,6 @@ descriptives <- function (data, var_name, group, includeGroups = "all") {
   # dependencies
   require(ggplot2) # graphs
   require(xlsx) # depends on java!
-  require(svglite) # used by ggplot to save in svg format
 
   # create data frame
   data <- as.data.frame(data)
