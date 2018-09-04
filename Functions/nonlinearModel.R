@@ -200,10 +200,10 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, graph="jpe
   
   # write output and predicted values to file
   setwd(wd)
-  write.csv(output, file = "tsnls.csv")
-  write.csv(pd, file = "tsnls_predicted.csv")
-  write.xlsx(output, "tsnls.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
-  write.xlsx(pd, "tsnls_predicted.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
+  write.csv(output, file = "nonlinearModel.csv")
+  write.csv(pd, file = "nonlinearModel_predicted.csv")
+  write.xlsx(output, "nonlinearModel.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
+  write.xlsx(pd, "nonlinearModel_predicted.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
   
   # statistical analysis
   if (any(is.na(unique(output$Group)))==TRUE || length(unique(output$Group)) < 2) {
