@@ -64,14 +64,14 @@ sim_data <- function(n1, m1, sd1, n2, m2, sd2, sessions, randvar=5,
   # parameters table
   parameter_temp1 <- data.frame(l_g1, max_g1, ini_g1)
   parameter_temp1$Group <- "g1"
-  parameter_temp1$Animal <- rep(1:n1,1)
+  parameter_temp1$Animal <- paste("g1_",rep(1:n1,1),sep="")
   colnames(parameter_temp1) <- c("Lambda", "Maximum_value", "Initial_value", "Group", "Animal")
   parameter_temp2 <- data.frame(l_g2, max_g2, ini_g2)
   parameter_temp2$Group <- "g2"
-  parameter_temp2$Animal <- rep(1:n2,1)
+  parameter_temp2$Animal <- paste("g2_",rep(1:n2,1),sep="")
   colnames(parameter_temp2) <- c("Lambda", "Maximum_value", "Initial_value", "Group", "Animal")
   parameter <- rbind(parameter_temp1,parameter_temp2)
-
+  
   # create matrices
   outcome_g1 <- matrix(0, sessions,n1)
   outcome_g2 <- matrix(0, sessions,n2)
@@ -102,7 +102,7 @@ sim_data <- function(n1, m1, sd1, n2, m2, sd2, sessions, randvar=5,
   outcome_g1 <- as.data.frame(outcome_g1)
   colnames(outcome_g1) <- header_g1
   outcome_g1$Session <- rep(1:sessions,1)
-
+  
   outcome_g2 <- as.data.frame(outcome_g2)
   colnames(outcome_g2) <- header_g2
   outcome_g2$Session <- rep(1:sessions,1)
