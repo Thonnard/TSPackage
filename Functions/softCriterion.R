@@ -15,15 +15,25 @@
 # Examples
 # softCriterion(dv="Scooore", session="Numero", id="Beeste", group="Gang", data=data)
 # softCriterion(dv="PercCorrect", session="Session", id="Animal", data=data)
+#
+# TODO: add group information and create graph
 
 softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 80) {
+  # dependencies
+  require(xlsx)
+  
   # create data frame
   data <- as.data.frame(data)
+  
+  # create dir for all output
+  wd <- getwd()
+  dir <- paste("softCriterion_", Sys.Date(), sep="")
+  dir.create(dir)
   
   # create readable variables from parameter input
   depvar <- eval(parse(text = paste("data$", dv, sep="")))
   animal <- eval(parse(text = paste("data$", id, sep="")))
-
+  
   # calculate success
   data$Success <- ifelse(depvar >= score, "TRUE", "FALSE")
   
@@ -40,36 +50,50 @@ softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 
     
     # order data correctly
     dataID <- dataID[with(dataID, order(eval(parse(text = session)))), ]
-
+    
     # determine sequence | this needs to be in this for loop to avoid mistakes!
     dataID$seq <- sequence(rle(as.character(dataID$Success))$lengths)
     
     # isolate critical session number
     colnames(dataID)[colnames(dataID) == session] <- "Session"  # changing name with parameter input so session information can be extracted
     criterion[i] <- dataID[dataID[, "Success"] == "TRUE" & dataID[, "seq"] == crit,]$Session[1]
-
+    
     # ID
     subject[i] <- i
     
     # Group
     if(group!="FOO"){
-    colnames(dataID)[colnames(dataID) == group] <- "Group"  # changing name with parameter input so group information can be extracted
-    gr[i] <- as.character(dataID$Group[1])
+      colnames(dataID)[colnames(dataID) == group] <- "Group"  # changing name with parameter input so group information can be extracted
+      gr[i] <- as.character(dataID$Group[1])
     }
   }
   
   # create output table
   if(group=="FOO") {
-  output <- data.frame(subject, criterion)
+    output <- data.frame(subject, criterion)
   }
   else {
     output <- data.frame(subject, gr, criterion)
   }
   rownames(output) <- c()
   
-  # write table to csv file
-  write.csv(output, file = "softCriterionOutput.csv")
-
-  # return table in console
-  return(output)
+  # create and set dir for graphic output
+  setwd(dir)
+  dir.create("Plots")
+  setwd("Plots")
+  
+  # create graph
+  
+  
+  # create dir and write table to csv file
+  setwd(wd)
+  setwd(dir)
+  dir.create("Data")
+  setwd("Data")
+  write.csv(output, file = "softCriterion.csv")
+  write.xlsx(output, "softCriterion.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
+  setwd(wd)
+  
+  # return data but don't show it
+  invisible(output)
 }
