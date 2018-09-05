@@ -60,11 +60,16 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   # creaste list to store predicted values
   preddatalist <- list()
   
-  # create dir for graphic output
-  dir.create("Plots")
+  # create dir for all output
   wd <- getwd()
-  setwd("Plots")
+  dir <- paste("nonLinearModel_", Sys.Date(), sep="")
+  dir.create(dir)
   
+  # create dir for graphic output
+  setwd(dir)
+  dir.create("Plots")
+  setwd("Plots")
+
   # run analysis for every animal in list
   writeLines("Please wait...")
   for(i in list){
@@ -92,47 +97,17 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
     preddatalist[[i]] <- preddata
     # save plots (one plot per animal)
     filename <- paste(i, ".", graph, sep="")
-    if (graph == "tiff") {
-      tiff(filename, width = 7.5, height = 7.5, unit = "in", res=dpi)
-    }
-    if (graph == "svg") {
-      svg(filename, width = 7.5, height = 7.5)
-    }
-    if (graph == "png") {
-      png(filename, width = 7.5, height = 7.5, unit = "in", res=dpi)
-    }
-    if (graph == "jpeg" | graph == "jpg") {
-      jpeg(filename, width = 7.5, height = 7.5, unit = "in", res=dpi)
-    }
-    if (graph == "pdf") {
-      pdf(filename)
-    }
-    if (graph == "eps") {
-      setEPS()
-      postscript(filename)
-    }
-    # plot
-    plot <- plot(dataID$Session,dataID$PercCorrect, pch=16, xlab="", ylab="", xlim=c(0,20), ylim=c(0,100))
-    lines(dataID$Session,predict(m),lty=1,col="red",lwd=2)
-    lab = paste("Lambda: ", round(lam[i],2))
-    lab2 = paste("ID: ", i)
-    lab3 = paste("Goodness of fit: ", round(gof[i],2))
-    text(x=21,y=15, lab, pos=2)
-    text(x=21,y=25, lab2, pos=2)
-    text(x=21,y=5, lab3, pos=2)
-    abline(h=50, lty=2)
-    abline(h=80, lty=2)
-    # end plot
-    dev.off()
-    
-    # ggplot code for individual plots (not functional...yet)
-    #plot <- ggplot(data = dataID, aes(Session, PercCorrect)) + 
-    #geom_point(aes(Session, PercCorrect), size = 1, alpha = 0.5) + 
-    #geom_line(data = preddata, aes(Session, predict(m)), color = "red") + 
-    #geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
-    #geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
-    #theme_bw() + 
-    #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    p <- ggplot() + 
+      geom_point(data = dataID, aes(Session, PercCorrect), size = 1, alpha = 0.5) +
+      geom_line(data = preddata, aes(Session, Predicted), color = "red") + 
+      geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
+      geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
+      # annotate("text", x = 20, y = 10, hjust = 1, vjust = 0, label = paste("Animal: ", subject[i], "\nLambda: ", round(lam[i],2), "\nGoodness of fit: ", round(gof[i],2), sep="")) +
+      annotate("text", x = 17.5, y = 10, hjust = 1, vjust = 0, label = paste("Animal:","\nLambda:", "\nGoodness of fit:", sep="")) +
+      annotate("text", x = 18, y = 10, hjust = 0, vjust = 0, label = paste(subject[i], "\n", round(lam[i],2), "\n", round(gof[i],2), sep="")) +
+      theme_bw() + 
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    ggsave(filename = filename, width = 9, height = 9, plot = p, units=units)
   }
   
   # create data frame with predicted values
@@ -162,7 +137,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
       height = unit(layout_panel_size, "cm")
     ))
     save_plot(filename2, p1,  base_width = layout_width, base_height = layout_length_temp, base_aspect_ratio=1, units=units, dpi = dpi, device = graph)
- } else {
+  } else {
     for(i in grouplist) {
       datasub <- pd[pd[, "Group"] == i,]
       filename3 <- paste(i, ".", graph, sep="")
@@ -184,7 +159,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
         height = unit(layout_panel_size, "cm")
       ))
       save_plot(filename3, p1,  base_width = layout_width, base_height = layout_length_temp, base_aspect_ratio=1, units=units, dpi = dpi, device = graph)
-      }
+    }
   }
   
   # summary graph
@@ -221,10 +196,14 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   output_sum$N <- tempdf$Animal
   output_sum <- output_sum[,c(1,6,2:5)]
   
-  # write output and predicted values to file
+  # write output and predicted values to file in new dir
   setwd(wd)
+  setwd(dir)
+  dir.create("Data")
+  setwd("Data")
   write.csv(output, file = "nonlinearModel.csv")
   write.csv(pd, file = "nonlinearModel_predicted.csv")
+  setwd(wd)
   
   # statistical analysis
   if (any(is.na(unique(output$Group)))==TRUE || length(unique(output$Group)) < 2) {
