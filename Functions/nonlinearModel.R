@@ -15,14 +15,17 @@
 #
 # Examples
 # nonlinearModel(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", dpi=600, adjust="bonferroni")
+# nonlinearModel(dv="PercCorrect", session="Session", id="Animal", group="Group", data, lambda=10, graph="jpeg", dpi=700, layout_width = 19, layout_length = 22, adjust="bonferroni")
 
-nonlinearModel <- function(dv, session, id, group, data, lambda = 10, graph="jpeg", dpi=600, adjust="tukey"){
+nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tukey", 
+                           graph="jpeg", dpi=600, layout_panel_size = 4.2, layout_width = 19,layout_length = NULL, units="cm"){
   # dependencies
   require(ggplot2) # graphs
   require(afex) # statistical analyses
   require(emmeans) # post hoc comparisons and contrast testing
-  require(xlsx) # depends on java!
   require(svglite) # used by ggplot to save in svg format
+  require(gridExtra) # for layout
+  require(egg) # to set panel size
   
   # create data frame
   data <- as.data.frame(data)
@@ -123,12 +126,12 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, graph="jpe
     
     # ggplot code for individual plots (not functional...yet)
     #plot <- ggplot(data = dataID, aes(Session, PercCorrect)) + 
-      #geom_point(aes(Session, PercCorrect), size = 1, alpha = 0.5) + 
-      #geom_line(data = preddata, aes(Session, predict(m)), color = "red") + 
-      #geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
-      #geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
-      #theme_bw() + 
-      #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    #geom_point(aes(Session, PercCorrect), size = 1, alpha = 0.5) + 
+    #geom_line(data = preddata, aes(Session, predict(m)), color = "red") + 
+    #geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
+    #geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
+    #theme_bw() + 
+    #theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
   }
   
   # create data frame with predicted values
@@ -138,30 +141,49 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, graph="jpe
   # layout graph
   grouplist <- unique(pd$Group)
   if (any(is.na(unique(pd$Group)))==T) {
+    datasub <- pd
     filename2 <- paste("layout.", graph, sep="")
+    if (is.null(layout_length)) {
+      (layout_length_temp <- (ceiling(length(unique(datasub$Animal)) / 4)) * 5.8)
+    } else {layout_length_temp <- layout_length}
     gr_layout <-  ggplot(pd, aes(Session, PercCorrect), color = "red", linetype = "solid") + 
-                  geom_point(size = 1, alpha = .5) + 
-                  geom_line(aes(Session, Predicted), color = "red", linetype = "solid") +
-                  geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
-                  geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
-                  facet_wrap(~ Animal, ncol=4) + 
-                  theme_bw() + 
-                  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-    ggsave(filename = filename2, plot = gr_layout, height = (length(unique(pd$Animal))/4)*4.75, width = 19 , units = "cm", dpi = dpi, device = graph)
-  } else {
+      geom_point(size = 1, alpha = .5) + 
+      geom_line(aes(Session, Predicted), color = "red", linetype = "solid") +
+      geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
+      geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
+      facet_wrap(~ Animal, ncol=4) + 
+      theme_bw() + 
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+    p1 <- grid.arrange(grobs = lapply(
+      list(gr_layout),
+      set_panel_size,
+      width = unit(layout_panel_size, "cm"),
+      height = unit(layout_panel_size, "cm")
+    ))
+    save_plot(filename2, p1,  base_width = layout_width, base_height = layout_length_temp, base_aspect_ratio=1, units=units, dpi = dpi, device = graph)
+ } else {
     for(i in grouplist) {
       datasub <- pd[pd[, "Group"] == i,]
       filename3 <- paste(i, ".", graph, sep="")
+      if (is.null(layout_length)) {
+        (layout_length_temp <- (ceiling(length(unique(datasub$Animal)) / 4)) * 5.8)
+      } else {layout_length_temp <- layout_length}
       gr_layout <-  ggplot(datasub, aes(Session, PercCorrect)) + 
-                    geom_point(size = 1, alpha = .5) + 
-                    geom_line(aes(Session, Predicted), color = "red", linetype = "solid") +
-                    geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
-                    geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
-                    facet_wrap(~ Animal, ncol=4) + 
-                    theme_bw() + 
-                    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-      ggsave(filename = filename3, plot = gr_layout, height = (length(unique(datasub$Animal))/4)*4.75, width = 19 , units = "cm", dpi = dpi, device = graph)
-    }
+        geom_point(size = 1, alpha = .5) + 
+        geom_line(aes(Session, Predicted), color = "red", linetype = "solid") +
+        geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
+        geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
+        facet_wrap(~ Animal, ncol=4) + 
+        theme_bw() + 
+        theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+      p1 <- grid.arrange(grobs = lapply(
+        list(gr_layout),
+        set_panel_size,
+        width = unit(layout_panel_size, "cm"),
+        height = unit(layout_panel_size, "cm")
+      ))
+      save_plot(filename3, p1,  base_width = layout_width, base_height = layout_length_temp, base_aspect_ratio=1, units=units, dpi = dpi, device = graph)
+      }
   }
   
   # summary graph
@@ -170,19 +192,19 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, graph="jpe
     sum <- aggregate(pd$Predicted, list(pd$Session), mean)
     colnames(sum) <- c("Session", "Predicted")
     gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted)) + 
-              geom_line() + 
-              geom_point() + 
-              theme_bw() + 
-              theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+      geom_line() + 
+      geom_point() + 
+      theme_bw() + 
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
     ggsave(filename = filename4, plot = gr_sum)
   } else {
     sum <- aggregate(pd$Predicted, list(pd$Session, pd$Group), mean)
     colnames(sum) <- c("Session", "Group", "Predicted")
     gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted, group=Group)) + 
-              geom_line() + 
-              geom_point() + 
-              theme_bw() + 
-              theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+      geom_line() + 
+      geom_point() + 
+      theme_bw() + 
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
     ggsave(filename = filename4, plot = gr_sum)
   }
   
@@ -202,8 +224,6 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, graph="jpe
   setwd(wd)
   write.csv(output, file = "nonlinearModel.csv")
   write.csv(pd, file = "nonlinearModel_predicted.csv")
-  write.xlsx(output, "nonlinearModel.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
-  write.xlsx(pd, "nonlinearModel_predicted.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
   
   # statistical analysis
   if (any(is.na(unique(output$Group)))==TRUE || length(unique(output$Group)) < 2) {
