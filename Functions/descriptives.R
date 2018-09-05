@@ -21,21 +21,20 @@
 descriptives <- function (data, var_name, group, includeGroups = "all") {
   # dependencies
   require(ggplot2) # graphs
-  require(xlsx) # depends on java!
 
   # create data frame
   data <- as.data.frame(data)
-
+  
   # changing group column name with parameter input so group information can be extracted
   colnames(data)[colnames(data) == group] <- "Group"
-
+  
   # select groups (optional)
   if (includeGroups[1] != "all") {
     data <- data[data[, "Group"] %in% includeGroups,]
   }
-
+  
   # core function
-  my.summary <- function(x) c(N = (length(x)-sum(is.na(x))), 
+  my.summary <- function(x) c(Observations = (length(x)-sum(is.na(x))), 
                               Missing = sum(is.na(x), na.rm = TRUE),
                               Mean = mean(x, na.rm = TRUE), 
                               Median = median(x, na.rm = TRUE), 
@@ -46,15 +45,35 @@ descriptives <- function (data, var_name, group, includeGroups = "all") {
                               quantile(x, .25, na.rm = TRUE), 
                               IQR = IQR (x, na.rm = TRUE), 
                               quantile(x, .75, na.rm = TRUE))
-
+  
   # execute core function on var_name
-  do.call(rbind, tapply(data[,var_name], data$Group, my.summary))
-
-  # write table to csv file
   output <- data.frame(do.call(rbind, tapply(data[,var_name], data$Group, my.summary)))
-  write.csv(output, file = paste(var_name, " ", "Descriptives.csv", sep = ""))
-  write.xlsx(output, file = paste(var_name, " ", "Descriptives.xlsx", sep = ""), col.names = TRUE, row.names = FALSE, append = FALSE)
+  output$Group <- rownames(output)
+  rownames(output) <- c()
+  
+  # find N per group and add to output
+  a <- unique(data$Group)
+  N <- vector(length = 0)
+  G <- vector(length = 0)
+  for(i in a){
+    temp <- data[data[,"Group"] == i,]
+    N[i] <- length(unique(temp$Animal))
+    G[i] <- i
+  }
+  temptable <- as.data.frame(cbind(N, G))
+  output$N <- temptable[match(output$Group, temptable$G),1]
+  output <- output[,c(12,13, 1:11)]
 
+  # create dir for all output
+    wd <- getwd()
+  dir <- paste("descriptives_", Sys.Date(), sep="")
+  dir.create(dir)
+  
+  # create and set dir for graphic output
+  setwd(dir)
+  dir.create("Plots")
+  setwd("Plots")
+  
   # create boxplots to visualize descriptives
   DescriptivesPlot <- ggplot(data = data, aes(x = Group, y = data[,var_name], color = Group)) + 
     stat_boxplot(geom = "errorbar", width = 0.1, size = 0.2) +      
@@ -70,13 +89,19 @@ descriptives <- function (data, var_name, group, includeGroups = "all") {
           axis.title.y = element_text(size = 9), axis.text.y = element_text(size = 7), 
           plot.title = element_text(size = 10, hjust = 0.5)) +
     labs(title = paste("Box plots of summary statistics of", " ", "'", var_name, "'", sep = ""),  x = "", y = var_name)
-    
-    ggsave(filename = paste(var_name, " ", "Descriptives", ".jpeg", sep = ""), 
+  
+  ggsave(filename = paste(var_name, "Descriptives.jpeg", sep = " "), 
          plot = DescriptivesPlot, 
-         device = "jpeg", 
-         path = getwd(), 
          width = 16, height = 6, units = "cm", dpi = 600)
-
+  
+  # create data dir and write table to csv file
+  setwd(wd)
+  setwd(dir)
+  dir.create("Data")
+  setwd("Data")
+  write.csv(output, file = paste(var_name, "Descriptives.csv", sep=" "))
+  setwd(wd)
+  
   # return table and plot (this might cause issues for .rmd).
-  return(list(output, DescriptivesPlot))    
+  return(list("Descriptives" = output, "Plot" = DescriptivesPlot))    
 }
