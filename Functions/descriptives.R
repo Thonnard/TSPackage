@@ -21,6 +21,7 @@
 descriptives <- function (data, var_name, group, includeGroups = "all") {
   # dependencies
   require(ggplot2) # graphs
+  require(xlsx) 
 
   # create data frame
   data <- as.data.frame(data)
@@ -100,6 +101,7 @@ descriptives <- function (data, var_name, group, includeGroups = "all") {
   dir.create("Data")
   setwd("Data")
   write.csv(output, file = paste(var_name, "Descriptives.csv", sep=" "))
+  write.xlsx(output, file = paste(var_name, " ", "Descriptives.xlsx", sep = ""), col.names = TRUE, row.names = FALSE, append = FALSE)
   setwd(wd)
   
   # return table and plot (this might cause issues for .rmd).
