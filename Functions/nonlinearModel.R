@@ -27,6 +27,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   require(gridExtra) # for layout
   require(egg) # to set panel size
   require(cowplot) # for the save_plot function
+  require(xlsx) # output
   
   # create data frame
   data <- as.data.frame(data)
@@ -203,6 +204,8 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   setwd("Data")
   write.csv(output, file = "nonlinearModel.csv")
   write.csv(pd, file = "nonlinearModel_predicted.csv")
+  write.xlsx(output, "nonlinearModel.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
+  write.xlsx(pd, "nonlinearModel_predicted.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
   setwd(wd)
   
   # statistical analysis
