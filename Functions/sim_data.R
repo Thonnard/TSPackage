@@ -51,6 +51,11 @@ sim_data <- function(n1, m1, sd1, n2, m2, sd2, sessions, randvar=5,
   # e
   e <- exp(1)
   
+  # create dir for all output
+  wd <- getwd()
+  dir <- paste("Simulated_data_", Sys.Date(), sep="")
+  dir.create(dir)
+  
   # create vector of lambda's with mean m and standard deviation sd for each group, each lambda corresponds with 1 subject
   l_g1 <- rnorm(n1,m1,sd1)
   l_g2 <- rnorm(n2,m2,sd2)
@@ -132,6 +137,11 @@ sim_data <- function(n1, m1, sd1, n2, m2, sd2, sessions, randvar=5,
   data$Score <- data$Score_2
   data$Score_2 <- NULL
   
+  # create and set dir for graphic output
+  setwd(dir)
+  dir.create("Plots")
+  setwd("Plots")
+  
   # create/save graph
   sum_score <- aggregate(Score~Group*Session, data, FUN = mean)
   sum_pred <- aggregate(Predicted_by_Model~Group*Session, data, FUN = mean)
@@ -144,7 +154,11 @@ sim_data <- function(n1, m1, sd1, n2, m2, sd2, sessions, randvar=5,
     theme_bw() + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
   ggsave(filename = "sim_data.jpeg", plot = gr_sim)
   
-  # save output and parameters
+  # create dir and save output and parameters
+  setwd(wd)
+  setwd(dir)
+  dir.create("Data")
+  setwd("Data")
   filename <- paste("simulated_data_", Sys.Date(), ".csv", sep="")
   filename2 <- paste("parameters_simulated_data_", Sys.Date(), ".csv", sep="")
   filename3 <- paste("simulated_data_", Sys.Date(), ".xlsx", sep="")
@@ -153,6 +167,7 @@ sim_data <- function(n1, m1, sd1, n2, m2, sd2, sessions, randvar=5,
   write.csv(parameter, file = filename2)
   write.xlsx(data, filename3, col.names = TRUE, row.names = FALSE, append = FALSE)
   write.xlsx(parameter, filename4, col.names = TRUE, row.names = FALSE, append = FALSE)
+  setwd(wd)
   
   # return data but don't show it
   invisible(data)
