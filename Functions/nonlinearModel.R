@@ -26,6 +26,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   require(svglite) # used by ggplot to save in svg format
   require(gridExtra) # for layout
   require(egg) # to set panel size
+  require(cowplot) # for the save_plot function
   
   # create data frame
   data <- as.data.frame(data)
