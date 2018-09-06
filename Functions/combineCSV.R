@@ -12,12 +12,12 @@
 # combineCSV(dir="C:/Users/David/Documents/R/TSPackage/Data")
 
 combineCSV <- function(dir = getwd()){
-  # original working directory
+  # save original working directory
   wd <- getwd()
-  
+
   # set working directory
   setwd(dir)
-  
+
   # get file names
   files <- list.files(full.names=TRUE)
   
@@ -34,20 +34,27 @@ combineCSV <- function(dir = getwd()){
   # name columns in output file
   names(data) <- header
   
-  # save file
+  # create output directory
+  diroutput <- paste("Combined_data_", Sys.Date(), sep="")
+  dir.create(diroutput)
+  
+  # save file in output dir
+  setwd(diroutput)
+  getoutputdir <- getwd()
   output <- paste("data (", Sys.Date(), ").csv", sep="")
   if (!file.exists(output)) {
-  write.csv(data, output, row.names=FALSE)
+    write.csv(data, output, row.names=FALSE)
   }
   else {
     writeLines(paste("WARNING: Output file (", output, ") already exists!\n", sep=""))
     stop("Please check output folder and remove old output files!")
-    }
+  }
   
   # set original working directory
   setwd(wd)
   
   # return
-  message <- paste("CSV files in folder ", dir, " were combined in 1 output file (", output, ") that was saved in the same directory", sep="")
+  message <- paste("CSV files in folder ", dir, " were combined in 1 output file (", output, ") that was saved in ", getoutputdir, ".", sep="")
   return(message)
 }
+
