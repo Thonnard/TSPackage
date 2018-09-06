@@ -40,7 +40,7 @@ descriptives <- function (data, var_name, group, includeGroups = "all") {
                               Mean = mean(x, na.rm = TRUE), 
                               Median = median(x, na.rm = TRUE), 
                               SD = sd(x, na.rm = TRUE), 
-                              SEM = sd((x)/sqrt(length(x)-sum(is.na(x))), na.rm = TRUE), 
+                              SEM = sd((x)/sqrt(length(x)), na.rm = TRUE), 
                               Min = min(x, na.rm = TRUE), 
                               Max = max(x, na.rm = TRUE), 
                               quantile(x, .25, na.rm = TRUE), 
