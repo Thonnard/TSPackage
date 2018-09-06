@@ -83,7 +83,7 @@ softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 
   setwd("Plots")
   
   # create graph
-  
+  # summary <- descriptives(data = data, var_name = dv, group = group, includeGroups = "all")[["Descriptives"]]
   
   # create dir and write table to csv file
   setwd(wd)
