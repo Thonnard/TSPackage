@@ -57,4 +57,3 @@ combineCSV <- function(dir = getwd()){
   message <- paste("CSV files in folder ", dir, " were combined in 1 output file (", output, ") that was saved in ", getoutputdir, ".", sep="")
   return(message)
 }
-
