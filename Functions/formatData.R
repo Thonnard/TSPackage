@@ -80,11 +80,19 @@ formatData <- function(data, group="all"){
   if (group[1] != "all") {
     data <- data[data[, "Group"] %in% group,]
   }
-
+  
+  # create dir for all output
+  wd <- getwd()
+  dir <- paste("formatted_Data_", Sys.Date(), sep="")
+  dir.create(dir)
+  
   # save data
+  setwd(dir)
+  getoutputdir <- getwd()
   write.csv(data, "data.csv", row.names=FALSE)
   require(xlsx) # depends on java!
   write.xlsx(data, "data.xlsx", col.names = TRUE, row.names = FALSE, append = FALSE)
+  setwd(wd)
   
   # create return table
   a <- unique(data$Group)
@@ -101,8 +109,7 @@ formatData <- function(data, group="all"){
   }
   
   # return
-  dir <- getwd()
-  message <- paste("Output files ('data.csv' & 'data.xlsx') saved in: ", dir, sep="")
+  message <- paste("Output files ('data.csv' & 'data.xlsx') saved in: ", getoutputdir, sep="")
   count <- length(a)
   list <- list("File" = message,  " Number of groups" = count, "Animals per group" = table)
   if(!is.na(a[1])) {
