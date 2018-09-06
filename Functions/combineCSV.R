@@ -35,7 +35,7 @@ combineCSV <- function(dir = getwd()){
   names(data) <- header
   
   # create output directory
-  diroutput <- paste("Combined_data_", Sys.Date(), sep="")
+  diroutput <- paste("Combined_data_", format(Sys.time(), "%F_%H-%M-%S"), sep="")
   dir.create(diroutput)
   
   # save file in output dir
