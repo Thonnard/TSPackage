@@ -63,7 +63,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   
   # create dir for all output
   wd <- getwd()
-  dir <- paste("nonLinearModel_", Sys.Date(), sep="")
+  dir <- paste("nonLinearModel_", format(Sys.time(), "%F_%H-%M-%S"), sep="")
   dir.create(dir)
   
   # create dir for graphic output
