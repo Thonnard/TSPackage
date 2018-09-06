@@ -53,7 +53,7 @@ sim_data <- function(n1, m1, sd1, n2, m2, sd2, sessions, randvar=5,
   
   # create dir for all output
   wd <- getwd()
-  dir <- paste("Simulated_data_", Sys.Date(), sep="")
+  dir <- paste("Simulated_data_", format(Sys.time(), "%F_%H-%M-%S"), sep="")
   dir.create(dir)
   
   # create vector of lambda's with mean m and standard deviation sd for each group, each lambda corresponds with 1 subject
