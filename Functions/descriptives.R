@@ -67,7 +67,7 @@ descriptives <- function (data, var_name, group, includeGroups = "all") {
 
   # create dir for all output
     wd <- getwd()
-  dir <- paste("descriptives_", Sys.Date(), sep="")
+  dir <- paste("descriptives_", format(Sys.time(), "%F_%H-%M-%S"), sep="")
   dir.create(dir)
   
   # create and set dir for graphic output
