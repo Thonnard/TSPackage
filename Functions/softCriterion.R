@@ -27,7 +27,7 @@ softCriterion <- function(dv, session, id, group="FOO", data, crit = 2, score = 
   
   # create dir for all output
   wd <- getwd()
-  dir <- paste("softCriterion_", Sys.Date(), sep="")
+  dir <- paste("softCriterion_", format(Sys.time(), "%F_%H-%M-%S"), sep="")
   dir.create(dir)
   
   # create readable variables from parameter input
