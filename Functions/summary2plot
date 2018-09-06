@@ -1,0 +1,42 @@
+# Description
+# summary2plot returns N, mean, SD and SEM per group. 
+#
+# Examples
+# summary2plot(data = data, id = "Animal", dv = "criterion", group = "Group")
+
+summary2plot <- function(data, id, dv, group){
+  # create data frame
+  data <- as.data.frame(data)
+  
+  # changing column names with parameter input so information can be extracted
+  colnames(data)[colnames(data) == group] <- "Group"
+  colnames(data)[colnames(data) == id] <- "Animal"
+  colnames(data)[colnames(data) == dv] <- "Variable"
+  
+  groups <- unique(data$Group)
+  N <- vector(length = 0)
+  GR <- vector(length = 0)
+  M <- vector(length = 0)
+  SD <- vector(length = 0)
+  SEM <- vector(length = 0)
+
+  for(i in groups){
+    temp <- data[data[,"Group"] == i,]
+    N[i] <- length(unique(temp$Animal))
+    GR[i] <- i
+    M[i] <- mean(temp$Variable, na.rm = TRUE)
+    SD[i] <- sd(temp$Variable, na.rm = TRUE) 
+    SEM[i] <- sd(temp$Variable, na.rm = TRUE)/sqrt(as.numeric(as.character(N[i])))
+  }
+  
+  # data frame
+  output <- as.data.frame(cbind(GR, N, M, SD, SEM))
+  output$N <- as.numeric(as.character(output$N))
+  output$M <- as.numeric(as.character(output$M))
+  output$SEM <- as.numeric(as.character(output$SEM))
+  output$SD <- as.numeric(as.character(output$SD))
+  rownames(output) <- c()
+
+  # return
+  return(output)
+}
