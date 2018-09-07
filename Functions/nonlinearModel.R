@@ -103,9 +103,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
       geom_line(data = preddata, aes(Session, Predicted), color = "red") + 
       geom_hline(yintercept = 50, size = 0.2, linetype = "dotted") +
       geom_hline(yintercept = 80, size = 0.2, linetype = "dashed") +
-      # annotate("text", x = 20, y = 10, hjust = 1, vjust = 0, label = paste("Animal: ", subject[i], "\nLambda: ", round(lam[i],2), "\nGoodness of fit: ", round(gof[i],2), sep="")) +
-      annotate("text", x = 17.5, y = 10, hjust = 1, vjust = 0, label = paste("Animal:","\nLambda:", "\nGoodness of fit:", sep="")) +
-      annotate("text", x = 18, y = 10, hjust = 0, vjust = 0, label = paste(subject[i], "\n", round(lam[i],2), "\n", round(gof[i],2), sep="")) +
+      annotate("text", x = 20, y = 10, hjust = 1, vjust = 0, label = paste("Animal: ", subject[i], "\nLambda: ", round(lam[i],2), "\nGoodness of fit: ", round(gof[i],2), sep="")) +
       theme_bw() + 
       theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
     ggsave(filename = filename, width = 9, height = 9, plot = p, units=units)
