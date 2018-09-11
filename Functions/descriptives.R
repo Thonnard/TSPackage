@@ -13,10 +13,8 @@
 # descriptives(data = data, var_name = "latency", group = "Treatment", includeGroups = "all")
 # descriptives(data = data, var_name = "latency", group = "Treatment", includeGroups = c("control", "drug3"))
 #
-# TO DO: Direct plots to [var_name] folder within wd(). This folder could be used for ANOVA function?
-#        Adjust N to group size instead of overall observations.
-#
-# ERRATUM : Function plots boxplot with name of first observation; no idea why. Needs to be solved.
+# TO DO: Double check whether SEM calculation is correct. I (P) think it is now since group N is solved. R takes account for NA when
+#        calculating SEM.
 #
 descriptives <- function (data, var_name, group, includeGroups = "all") {
   # dependencies
