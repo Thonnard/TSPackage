@@ -115,7 +115,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   
   # layout graph
   grouplist <- unique(pd$Group)
-  if (any(is.na(unique(pd$Group)))==T) {
+  if (any(is.na(unique(pd$Group)))==TRUE) {
     datasub <- pd
     filename2 <- paste("layout.", graph, sep="")
     if (is.null(layout_length)) {
@@ -163,7 +163,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   
   # summary graph
   filename4 <- paste("summary.", graph, sep="")
-  if (any(is.na(unique(pd$Group)))==T) {
+  if (any(is.na(unique(pd$Group)))==TRUE) {
     sum <- aggregate(pd$Predicted, list(pd$Session), mean)
     colnames(sum) <- c("Session", "Predicted")
     gr_sum <- ggplot(data=sum, aes(x=Session, y=Predicted)) + 
@@ -188,7 +188,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
   rownames(output) <- c()
   colnames(output) <- c("Animal", "Group", "Lambda", "Goodness of fit", "Initial value", "Maximum value")
   output_sum <- output
-  if (any(is.na(unique(output_sum$Group)))==T) output_sum$Group <- "No_group_information"
+  if (any(is.na(unique(output_sum$Group)))==TRUE) output_sum$Group <- "No_group_information"
   tempdf <- aggregate(Animal ~ Group, data = output, length) # determine N per group
   output_sum$Animal <- NULL
   output_sum <- aggregate(.~Group, output_sum, FUN = function(x) mean(as.numeric(as.character(x))))
