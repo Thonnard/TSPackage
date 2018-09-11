@@ -8,13 +8,13 @@
 # var_name: name of variable of interest
 # id: name of subject (e.g.: "Patient", "Animal", ...)
 # group: name of grouping variable (e.g.: "Genotype", "Sex", "Treatment", ...)
-# SS: type Sum of Squares (e.g.: "3", "2", "II", "I")
+# SS: type Sum of Squares (e.g.: 3, 2, "II", "I")
 # adjust: correction used for contrast analysis (e.g., "Tukey", "Bonferroni", ...)
 #
 # Example
-# descriptives(data, "latency", group = "Treatment")
-# descriptives(data = data, var_name = "latency", group = "Treatment", includeGroups = "all")
-# descriptives(data = data, var_name = "latency", group = "Treatment", includeGroups = c("control", "drug3"))
+# varAnova(data, "latency", id = "Animal", group = "Treatment")
+# varAnova(data = data, var_name = "latency", id = "Animal", group = "Treatment", SS = 3)
+# varAnova(data = data, var_name = "latency", id = "Animal", group = "Treatment", SS = "II", adjust = "Tukey")
 #
 # TO DO: CODE IS STILL UNDER CONSTRUCTION !!!
 #        Only functional for var_name = "PercCorrect". Few lines still not dynamic (see line 42 and 101).
