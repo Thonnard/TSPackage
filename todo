@@ -53,3 +53,5 @@ Workflow
 (4.) function that checks performance during shaping (combining all shaping data + analysis) 
 
 (5.) standardize: parameter names, output names, output location, output folder names, graphs (incl fonts)
+
+6. Replace output.abetRpt file (xml type) if possible
