@@ -106,7 +106,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
       annotate("text", x = 20, y = 10, hjust = 1, vjust = 0, label = paste("Animal: ", subject[i], "\nLambda: ", round(lam[i],2), "\nGoodness of fit: ", round(gof[i],2), sep="")) +
       theme_bw() + 
       theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-    ggsave(filename = filename, width = trackplot_dim, height = trackplot_dim, plot = p, units=units)
+    ggsave(filename = filename, width = trackplot_dim, height = trackplot_dim, plot = p, dpi = dpi, units=units)
   }
   
   # create data frame with predicted values
@@ -171,7 +171,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
       geom_point() + 
       theme_bw() + 
       theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-    ggsave(filename = filename4, plot = gr_sum)
+    ggsave(filename = filename4, plot = gr_sum, dpi = dpi)
   } else {
     sum <- aggregate(pd$Predicted, list(pd$Session, pd$Group), mean)
     colnames(sum) <- c("Session", "Group", "Predicted")
@@ -180,7 +180,7 @@ nonlinearModel <- function(dv, session, id, group, data, lambda = 10, adjust="tu
       geom_point() + 
       theme_bw() + 
       theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-    ggsave(filename = filename4, plot = gr_sum)
+    ggsave(filename = filename4, plot = gr_sum, dpi = dpi)
   }
   
   # output
