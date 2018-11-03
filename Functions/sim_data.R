@@ -1,4 +1,4 @@
-# Description TEST
+# Description
 # sim_data() simulates score data for two groups as obtained in a rodent touchscreen visual discrimination paradigm.
 # data is simulated according to the nonlinear model described by Piiponniemi et al. (DOI: 10.1016/J.NEULET.2017.04.049), which includes the estimation of general learning parameter 'lambda'
 # nonlinear model: score <- max - (max - ini)*e^(-lambda*session/100)
